@@ -1,0 +1,2583 @@
+﻿html
+{
+    background-color: #fff;
+    text-align: center;
+    padding-left: 7%;
+    padding-right: 7%;
+    background-image: url(/Images/background1.png);
+}
+
+#hide-in-mobile
+{
+    display: block;
+}
+
+.hideinmobile
+{
+    display: block;
+}
+
+.onlymobile
+{
+    display: none;
+}
+
+body
+{
+    background-color: #fff;
+    color: #333;
+    font-size: .70em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    text-align: center;
+    z-index: 650;
+}
+
+
+/*datepicker*/
+.d a.ui-state-default
+{
+    color: Black;
+    background-color: Green;
+    background: Green;
+}
+
+.ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+{
+    color: red;
+}
+
+a
+{
+    color: #333;
+}
+
+    a:link
+    {
+        color: #823434;
+        font-size: .95em;
+        text-decoration: none;
+    }
+
+    a:active
+    {
+        color: #944b4b;
+    }
+
+    a:visited
+    {
+        color: #4d4848;
+    }
+
+    a:link:hover
+    {
+        color: #944b4b;
+        text-decoration: underline;
+    }
+
+header, footer, hgroup,
+nav, section
+{
+    display: block;
+}
+
+.clear-fix:after
+{
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+h1, h2, h3
+{
+    color: #000;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h1
+{
+    font-size: 2em;
+}
+
+h2
+{
+    font-size: 1.75em;
+}
+
+h3
+{
+    font-size: 1em;
+}
+
+/* main layout
+----------------------------------------------------------*/
+.header
+{
+    float: left;
+    clear: both;
+    width: 100%;
+    background-color: #8ac5e8;
+    text-align: left;
+    z-index: 100;
+}
+
+
+
+.header1
+{
+    float: left;
+    clear: both;
+    width: 70%;
+    padding-top: .5%;
+    color: white;
+    text-align: center;
+    font: 18px bold sans-serif;
+}
+
+
+.header2
+{
+    float: left;
+    width: 30%;
+    text-align: center;
+    font-size: 1em;
+    font-family: sans-serif;
+}
+
+
+#newdiv
+{
+    float: left;
+    clear: both;
+    position: absolute;
+    width: 68%;
+    padding: 1%;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;
+    background-color: #bbbbbb;
+}
+
+
+.menu
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.menu1
+{
+    clear: both;
+    float: left;
+    text-align: left;
+    width: 50%;
+}
+
+.menu2
+{
+    float: left;
+    text-align: left;
+    width: 50%;
+}
+
+
+
+.intro
+{
+    clear: both;
+    width: 100%;
+    background-color: #fff;
+    text-align: left;
+}
+
+.others
+{
+    clear: both;
+    width: 100%;
+    background-color: #fff;
+    text-align: left;
+}
+
+.body1
+{
+    float: left;
+    clear: both;
+    width: 53%;
+    padding: 1%;
+    background-color: #fff;
+    text-align: left;
+    background-image: url(/Images/background.png);
+}
+
+.body1child1
+{
+    float: left;
+    clear: both;
+    width: 100%;
+    background-color: #fff;
+}
+
+.body1child1-left
+{
+    float: left;
+    clear: both;
+    padding: 1%;
+    width: 48%;
+    background-color: #fff;
+}
+
+.body1child1-right
+{
+    float: left;
+    width: 48%;
+    padding: 1%;
+}
+
+.body1child2
+{
+    float: left;
+    clear: both;
+    width: 100%;
+    background-color: #fff;
+}
+
+.body1child2-left
+{
+    float: left;
+    clear: both;
+    width: 48%;
+    padding: 1%;
+}
+
+.body1child2-right
+{
+    float: left;
+    width: 48%;
+    padding: 1%;
+}
+
+.body1child3
+{
+    float: left;
+    clear: both;
+    width: 100%;
+    background-color: #fff;
+}
+
+.body1child3-left
+{
+    float: left;
+    clear: both;
+    width: 48%;
+    padding: 1%;
+}
+
+.body1child3-right
+{
+    float: left;
+    width: 48%;
+    padding: 1%;
+}
+
+.body2
+{
+    float: left;
+    width: 25%;
+    padding-top: 1.5%;
+    background-color: #fff;
+    /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+}
+
+
+
+.body2child2
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.body2child3
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+    .body2child3 textarea
+    {
+        clear: both;
+        float: none;
+        width: 80%;
+        padding: 1%;
+    }
+
+.body2child4
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.body2child5
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.body3
+{
+    float: left;
+    width: 18%;
+    padding-top: 1.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    background-color: #fff;
+    overflow: auto;
+    /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+}
+
+footer
+{
+    clear: both;
+    float: left;
+    width: 94%;
+    padding: 3%;
+    background-color: #e2e2e2;
+    font-size: 1.2em;
+}
+
+
+
+/* info and errors */
+.message-info
+{
+    border: 1px solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.message-error
+{
+    clear: both;
+    color: maroon;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.message-success
+{
+    color: #7ac0da;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.error
+{
+    color: maroon;
+}
+
+/* styles for validation helpers */
+.field-validation-error
+{
+    color: maroon;
+    font-weight: bold;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+input.input-validation-error
+{
+    border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error
+{
+    border: 0 none;
+}
+
+.validation-summary-errors
+{
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+.image
+{
+    text-align: center;
+    clear: both;
+    float: initial;
+}
+
+.image1
+{
+    text-align: center;
+    clear: both;
+    z-index: 700;
+}
+
+
+/********************
+*   Mobile Styles   *
+********************/
+@media handheld
+{
+    *
+    {
+        padding: 0;
+        float: none;
+    }
+
+    ul.onlymobile
+    {
+            background-color:#bbbbbb;
+    }
+    ul.onlymobile li 
+    { 
+    display: inline-block;
+    list-style: none;
+    font-size: 1em;
+    text-align: left;
+}
+    ul.onlymobile li a
+{
+    padding: .2em .2em;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2em;
+    background-color:#666d75;
+    color:white;
+    border-radius: .2em .2em .2em .2em;
+    -webkit-border-radius: .2em .2em .2em .2em;
+    -moz-border-radius:  .2em .2em .2em .2em;
+}
+
+    html
+    {
+        -webkit-text-size-adjust: none;
+        background-color: #fff;
+        padding: 2%;
+        background-image: none;
+    }
+
+    #slideshow-inner li#slide1 img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    #slideshow-inner li#slide2 img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    .onlymobile
+    {
+        display: block;
+    }
+
+    #hide-in-mobile
+    {
+        display: none;
+    }
+
+    .hideinmobile
+    {
+        display: none;
+    }
+
+    body
+    {
+        background-color: #fff;
+        color: #333;
+        font-size: 1em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        width: 100%;
+    }
+
+
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        color: Black;
+        background-color: Green;
+        background: Green;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+    }
+
+        a:link
+        {
+            color: #823434;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:active
+        {
+            color: #944b4b;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:visited
+        {
+            color: #4d4848;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:link:hover
+        {
+            color: #944b4b;
+            text-decoration: underline;
+            font-size: 1em;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+    .clear-fix:after
+    {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 1em;
+    }
+
+    h2
+    {
+        font-size: 1em;
+    }
+
+    h3
+    {
+        font-size: 1em;
+    }
+
+    /* main layout
+----------------------------------------------------------*/
+    .header
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #8ac5e8;
+        text-align: left;
+        z-index: 100;
+    }
+
+
+
+    .header1
+    {
+        float: left;
+        clear: both;
+        width: 30%;
+        padding-top: 1%;
+        color: white;
+        text-align: center;
+        font-size: 1em;
+    }
+
+
+    .header2
+    {
+        float: left;
+        width: 70%;
+        text-align: left;
+        font-size: 1em;
+        font-family: sans-serif;
+    }
+
+
+    #newdiv
+    {
+        float: left;
+        clear: both;
+        position: absolute;
+        width: 68%;
+        padding: 1%;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        z-index: 700;
+        background-color: #bbbbbb;
+    }
+
+
+    .menu
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        line-height: 2em;
+        font-size: 1em;
+    }
+
+    .menu1
+    {
+        clear: both;
+        float: left;
+        text-align: left;
+        width: 40%;
+        line-height: 2em;
+        font: 1em bold;
+    }
+
+    .menu2
+    {
+        float: left;
+        text-align: left;
+        width: 60%;
+        line-height: 2em;
+        font: 1em bold;
+    }
+
+
+
+    .intro
+    {
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        text-align: left;
+        font-size: 1em;
+    }
+
+    .body1
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        padding: 1%;
+        background-color: #fff;
+        text-align: left;
+        background-image: url(/Images/background.png);
+        font-size: 1em;
+    }
+
+    .body1child1
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child1-left
+    {
+        float: left;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .body1child1-right
+    {
+        float: left;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        text-align: center;
+    }
+
+    .body1child2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        display: none;
+    }
+
+    .body1child2-left
+    {
+        float: left;
+        clear: both;
+        width: 50%;
+    }
+
+    .body1child2-right
+    {
+        float: left;
+        width: 50%;
+    }
+
+    .body1child3
+    {
+        display: none;
+    }
+
+    .body1child3-left
+    {
+        float: left;
+        clear: both;
+        width: 48%;
+        padding: 1%;
+    }
+
+    .body1child3-right
+    {
+        float: left;
+        width: 48%;
+        padding: 1%;
+    }
+
+    .body2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        padding-top: .5%;
+        background-color: #fff;
+        font-size: 1em;
+        /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+    }
+
+    .body2child2
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body2child3
+    {
+        display: none;
+    }
+
+        .body2child3 textarea
+        {
+            clear: both;
+            float: none;
+            width: 80%;
+            padding: 1%;
+        }
+
+    .body2child4
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body2child5
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body3
+    {
+        width: 100%;
+        float: left;
+        clear: both;
+        padding-top: .5%;
+        padding-bottom: 1%;
+        background-color: #fff;
+        font-size: 1em;
+        /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+    }
+
+
+
+
+    /* info and errors */
+    .message-info
+    {
+        border: 1px solid;
+        clear: both;
+        padding: 10px 20px;
+    }
+
+    .message-error
+    {
+        clear: both;
+        color: maroon;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    .message-success
+    {
+        color: #7ac0da;
+        font-size: 1.3em;
+        font-weight: bold;
+        margin: 20px 0 10px 0;
+    }
+
+    .error
+    {
+        color: maroon;
+    }
+
+    /* styles for validation helpers */
+    .field-validation-error
+    {
+        color: maroon;
+        font-weight: bold;
+    }
+
+    .field-validation-valid
+    {
+        display: none;
+    }
+
+    input.input-validation-error
+    {
+        border: 1px solid #e80c4d;
+    }
+
+    input[type="checkbox"].input-validation-error
+    {
+        border: 0 none;
+    }
+
+    .validation-summary-errors
+    {
+        color: #e80c4d;
+        font-weight: bold;
+        font-size: 1em;
+    }
+
+    .validation-summary-valid
+    {
+        display: none;
+    }
+
+    .image
+    {
+        text-align: center;
+        clear: both;
+        float: initial;
+    }
+
+        .image img
+        {
+            height: 80px;
+            width: 80px;
+        }
+
+    .image1
+    {
+        text-align: center;
+        clear: both;
+        z-index: 700;
+    }
+}
+
+@media only screen and (max-width: 500px)
+{
+    *
+    {
+        padding: 0;
+        float: none;
+    }
+        
+    ul.onlymobile
+    {
+            background-color:#bbbbbb;
+    }
+    ul.onlymobile li 
+    { 
+    display: inline-block;
+    list-style: none;
+    font-size: 1em;
+    text-align: left;
+}
+    ul.onlymobile li a
+{
+    padding: .2em .2em;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2em;
+    background-color:#666d75;
+    color:white;
+    border-radius: .2em .2em .2em .2em;
+    -webkit-border-radius: .2em .2em .2em .2em;
+    -moz-border-radius:  .2em .2em .2em .2em;
+}
+    html
+    {
+        -webkit-text-size-adjust: none;
+        background-color: #fff;
+        padding: 2%;
+        background-image: none;
+    }
+
+    #slideshow-inner li#slide1 img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    #slideshow-inner li#slide2 img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    .onlymobile
+    {
+        display: block;
+    }
+
+    #hide-in-mobile
+    {
+        display: none;
+    }
+
+    .hideinmobile
+    {
+        display: none;
+    }
+
+    body
+    {
+        background-color: #fff;
+        color: #333;
+        font-size: 1em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        width: 100%;
+    }
+
+
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        color: Black;
+        background-color: Green;
+        background: Green;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+    }
+
+        a:link
+        {
+            color: #823434;
+            font-size: 1em;
+            text-decoration: none;
+        }
+
+        a:active
+        {
+            color: #944b4b;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:visited
+        {
+            color: #4d4848;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:link:hover
+        {
+            color: #944b4b;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+    .clear-fix:after
+    {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 1em;
+    }
+
+    h2
+    {
+        font-size: 1em;
+    }
+
+    h3
+    {
+        font-size: 1em;
+    }
+
+    /* main layout
+----------------------------------------------------------*/
+    .header
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #8ac5e8;
+        text-align: left;
+        z-index: 100;
+    }
+
+
+
+    .header1
+    {
+        float: left;
+        clear: both;
+        width: 30%;
+        padding-top: 1%;
+        color: white;
+        text-align: center;
+        font-size: 1em;
+    }
+
+
+    .header2
+    {
+        float: left;
+        width: 70%;
+        text-align: left;
+        font-size: 1em;
+        line-height: 1.5em;
+        font-family: sans-serif;
+    }
+
+    #newdiv
+    {
+        float: left;
+        clear: both;
+        position: absolute;
+        width: 68%;
+        padding: 1%;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        background-color: #bbbbbb;
+    }
+
+
+    .menu
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        line-height: 2em;
+        font: 1em;
+    }
+
+    .menu1
+    {
+        clear: both;
+        float: left;
+        text-align: left;
+        width: 40%;
+        line-height: 2em;
+        font: 1em bold;
+    }
+
+    .menu2
+    {
+        float: left;
+        text-align: left;
+        width: 60%;
+        line-height: 2em;
+        font: 1em bold;
+    }
+
+
+    .intro
+    {
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        text-align: left;
+        font-size: 1em;
+    }
+
+    .body1
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        padding: 1%;
+        background-color: #fff;
+        text-align: left;
+        background-image: url(/Images/background.png);
+        font-size: 1em;
+    }
+
+    .body1child1
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child1-left
+    {
+        float: left;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .body1child1-right
+    {
+        float: left;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        text-align: center;
+    }
+
+
+    .body1child2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        display: none;
+    }
+
+    .body1child2-left
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child2-right
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child3
+    {
+        display: none;
+    }
+
+    .body1child3-left
+    {
+        float: left;
+        clear: both;
+        width: 48%;
+        padding: 1%;
+    }
+
+    .body1child3-right
+    {
+        float: left;
+        width: 48%;
+        padding: 1%;
+    }
+
+    .body2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        padding-top: .5%;
+        background-color: #fff;
+        font-size: 1em;
+        /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+    }
+
+    .body2child2
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body2child3
+    {
+        display: none;
+    }
+
+        .body2child3 textarea
+        {
+            clear: both;
+            float: none;
+            width: 80%;
+            padding: 1%;
+        }
+
+    .body2child4
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body2child5
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body3
+    {
+        width: 100%;
+        float: left;
+        clear: both;
+        padding-top: .5%;
+        padding-bottom: 1%;
+        background-color: #fff;
+        font-size: 1em;
+        /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+    }
+
+
+
+    .image
+    {
+        text-align: center;
+        clear: both;
+        float: initial;
+    }
+
+        .image img
+        {
+            height: 80px;
+            width: 80px;
+        }
+
+    .image1
+    {
+        text-align: center;
+        clear: both;
+        z-index: 700;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+    *
+    {
+        padding: 0;
+        float: none;
+    }
+    ul.onlymobile
+    {
+            background-color:#bbbbbb;
+    }
+    ul.onlymobile li 
+    { 
+    display: inline-block;
+    list-style: none;
+    font-size: 1em;
+    text-align: left;
+}
+    ul.onlymobile li a
+{
+    padding: .2em .2em;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2em;
+    background-color:#666d75;
+    color:white;
+    border-radius: .2em .2em .2em .2em;
+    -webkit-border-radius: .2em .2em .2em .2em;
+    -moz-border-radius:  .2em .2em .2em .2em;
+}
+    html
+    {
+        -webkit-text-size-adjust: none;
+        background-color: #fff;
+        padding: 2%;
+        background-image: none;
+    }
+
+    #slideshow-inner li#slide1 img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    #slideshow-inner li#slide2 img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    .onlymobile
+    {
+        display: block;
+    }
+
+    #hide-in-mobile
+    {
+        display: none;
+    }
+
+    .hideinmobile
+    {
+        display: none;
+    }
+
+    body
+    {
+        background-color: #fff;
+        color: #333;
+        font-size: 1em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        width: 100%;
+    }
+
+
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        color: Black;
+        background-color: Green;
+        background: Green;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+    }
+
+        a:link
+        {
+            color: #823434;
+            font-size: 1em;
+            text-decoration: none;
+        }
+
+        a:active
+        {
+            color: #944b4b;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:visited
+        {
+            color: #4d4848;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:link:hover
+        {
+            color: #944b4b;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+    .clear-fix:after
+    {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 1em;
+    }
+
+    h2
+    {
+        font-size: 1em;
+    }
+
+    h3
+    {
+        font-size: 1em;
+    }
+
+    /* main layout
+----------------------------------------------------------*/
+    .header
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #8ac5e8;
+        text-align: left;
+        z-index: 100;
+    }
+
+
+
+    .header1
+    {
+        float: left;
+        clear: both;
+        width: 30%;
+        padding-top: 1%;
+        color: white;
+        text-align: center;
+        font-size: 1em;
+    }
+
+
+    .header2
+    {
+        float: left;
+        width: 70%;
+        text-align: left;
+        font-size: 1em;
+        font-family: sans-serif;
+    }
+
+    #newdiv
+    {
+        float: left;
+        clear: both;
+        position: absolute;
+        width: 68%;
+        padding: 1%;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        background-color: #bbbbbb;
+    }
+
+
+    .menu
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        line-height: 2em;
+        font: 1em;
+    }
+
+    .menu1
+    {
+        clear: both;
+        float: left;
+        text-align: left;
+        width: 40%;
+        line-height: 2em;
+        font: 1em bold;
+    }
+
+    .menu2
+    {
+        float: left;
+        text-align: left;
+        width: 60%;
+        line-height: 2em;
+        font: 1em bold;
+    }
+
+
+    .intro
+    {
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        text-align: left;
+        font-size: 1em;
+    }
+
+    .body1
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        padding: 1%;
+        background-color: #fff;
+        text-align: left;
+        background-image: url(/Images/background.png);
+        font-size: 1em;
+    }
+
+    .body1child1
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child1-left
+    {
+        float: left;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .body1child1-right
+    {
+        float: left;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        text-align: center;
+    }
+
+    .body1child2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        display: none;
+    }
+
+    .body1child2-left
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child2-right
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child3
+    {
+        display: none;
+    }
+
+    .body1child3-left
+    {
+        float: left;
+        clear: both;
+        width: 48%;
+        padding: 1%;
+    }
+
+    .body1child3-right
+    {
+        float: left;
+        width: 48%;
+        padding: 1%;
+    }
+
+    .body2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        padding-top: .5%;
+        background-color: #fff;
+        font-size: 1em;
+        /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+    }
+
+    .body2child2
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body2child3
+    {
+        display: none;
+    }
+
+        .body2child3 textarea
+        {
+            clear: both;
+            float: none;
+            width: 80%;
+            padding: 1%;
+        }
+
+    .body2child4
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body2child5
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body3
+    {
+        width: 100%;
+        float: left;
+        clear: both;
+        padding-top: .5%;
+        padding-bottom: 1%;
+        background-color: #fff;
+        font-size: 1em;
+        /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+    }
+
+
+    .image
+    {
+        text-align: center;
+        clear: both;
+        float: initial;
+    }
+
+        .image img
+        {
+            height: 80px;
+            width: 80px;
+        }
+
+    .image1
+    {
+        text-align: center;
+        clear: both;
+        z-index: 700;
+    }
+}
+
+@media only screen and (max-width: 480px)
+{
+    *
+    {
+        padding: 0;
+        float: none;
+    }
+    ul.onlymobile
+    {
+            background-color:#bbbbbb;
+    }
+    ul.onlymobile li 
+    { 
+    display: inline-block;
+    list-style: none;
+    font-size: 1em;
+    text-align: left;
+}
+    ul.onlymobile li a
+{
+    padding: .2em .2em;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2em;
+    background-color:#666d75;
+    color:white;
+    border-radius: .2em .2em .2em .2em;
+    -webkit-border-radius: .2em .2em .2em .2em;
+    -moz-border-radius:  .2em .2em .2em .2em;
+}
+    html
+    {
+        -webkit-text-size-adjust: none;
+        background-color: #fff;
+        padding: 2%;
+        background-image: none;
+    }
+
+    #slideshow-inner li#slide1 img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    #slideshow-inner li#slide2 img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    .onlymobile
+    {
+        display: block;
+    }
+
+    #hide-in-mobile
+    {
+        display: none;
+    }
+
+    .hideinmobile
+    {
+        display: none;
+    }
+
+    body
+    {
+        background-color: #fff;
+        color: #333;
+        font-size: 1em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        width: 100%;
+    }
+
+
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        color: Black;
+        background-color: Green;
+        background: Green;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+    }
+
+        a:link
+        {
+            color: #823434;
+            font-size: 1em;
+            text-decoration: none;
+        }
+
+        a:active
+        {
+            color: #944b4b;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:visited
+        {
+            color: #4d4848;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:link:hover
+        {
+            color: #944b4b;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+    .clear-fix:after
+    {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 1em;
+    }
+
+    h2
+    {
+        font-size: 1em;
+    }
+
+    h3
+    {
+        font-size: 1em;
+    }
+
+    /* main layout
+----------------------------------------------------------*/
+    .header
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #8ac5e8;
+        text-align: left;
+    }
+
+
+
+    .header1
+    {
+        float: left;
+        clear: both;
+        width: 30%;
+        padding-top: 1%;
+        color: white;
+        text-align: center;
+        font-size: 1em;
+    }
+
+
+    .header2
+    {
+        float: left;
+        width: 70%;
+        text-align: left;
+        font-size: 1em;
+        font-family: sans-serif;
+    }
+
+    #newdiv
+    {
+        float: left;
+        clear: both;
+        position: absolute;
+        width: 68%;
+        padding: 1%;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        background-color: #bbbbbb;
+    }
+
+
+    .menu
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        line-height: 2em;
+        font: 1em;
+    }
+
+    .menu1
+    {
+        clear: both;
+        float: left;
+        text-align: left;
+        width: 40%;
+        line-height: 2em;
+        font: 1em bold;
+    }
+
+    .menu2
+    {
+        float: left;
+        text-align: left;
+        width: 60%;
+        line-height: 2em;
+        font: 1em bold;
+    }
+
+    .intro
+    {
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        text-align: left;
+        font-size: 1em;
+    }
+
+    .body1
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        padding: 1%;
+        background-color: #fff;
+        text-align: left;
+        background-image: url(/Images/background.png);
+        font-size: 1em;
+    }
+
+    .body1child1
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child1-left
+    {
+        float: left;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .body1child1-right
+    {
+        float: left;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        text-align: center;
+    }
+
+
+    .body1child2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        display: none;
+    }
+
+    .body1child2-left
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child2-right
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child3
+    {
+        display: none;
+    }
+
+    .body1child3-left
+    {
+        float: left;
+        clear: both;
+        width: 48%;
+        padding: 1%;
+    }
+
+    .body1child3-right
+    {
+        float: left;
+        width: 48%;
+        padding: 1%;
+    }
+
+    .body2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        padding-top: .5%;
+        background-color: #fff;
+        font-size: 1em;
+        /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+    }
+
+    .body2child2
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body2child3
+    {
+        display: none;
+    }
+
+        .body2child3 textarea
+        {
+            clear: both;
+            float: none;
+            width: 80%;
+            padding: 1%;
+        }
+
+    .body2child4
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body2child5
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body3
+    {
+        width: 100%;
+        float: left;
+        clear: both;
+        padding-top: .5%;
+        padding-bottom: 1%;
+        background-color: #fff;
+        font-size: 1em;
+        /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+    }
+
+
+    .image
+    {
+        text-align: center;
+        clear: both;
+        float: initial;
+    }
+
+        .image img
+        {
+            height: 80px;
+            width: 80px;
+        }
+
+    .image1
+    {
+        text-align: center;
+        clear: both;
+        z-index: 700;
+    }
+}
+
+@media only screen and (max-width: 1098px)
+{
+    *
+    {
+        padding: 0;
+        float: none;
+    }
+    ul.onlymobile
+    {
+            background-color:#bbbbbb;
+    }
+    ul.onlymobile li 
+    { 
+    display: inline-block;
+    list-style: none;
+    font-size: 1em;
+    text-align: left;
+}
+    ul.onlymobile li a
+{
+    padding: .2em .2em;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2em;
+    background-color:#666d75;
+    color:white;
+    border-radius: .2em .2em .2em .2em;
+    -webkit-border-radius: .2em .2em .2em .2em;
+    -moz-border-radius:  .2em .2em .2em .2em;
+}
+    html
+    {
+        -webkit-text-size-adjust: none;
+        background-color: #fff;
+        padding: 2%;
+        background-image: none;
+    }
+
+    #slideshow-inner li#slide1 img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    #slideshow-inner li#slide2 img
+    {
+        height: 100px;
+        width: 100px;
+    }
+
+    .onlymobile
+    {
+        display: block;
+    }
+
+    #hide-in-mobile
+    {
+        display: none;
+    }
+
+    .hideinmobile
+    {
+        display: none;
+    }
+
+    body
+    {
+        background-color: #fff;
+        color: #333;
+        font-size: 1em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        width: 100%;
+    }
+
+
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        color: Black;
+        background-color: Green;
+        background: Green;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+    }
+
+        a:link
+        {
+            color: #823434;
+            font-size: 1em;
+            text-decoration: none;
+        }
+
+        a:active
+        {
+            color: #944b4b;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:visited
+        {
+            color: #4d4848;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+        a:link:hover
+        {
+            color: #944b4b;
+            font-size: 1em;
+            text-decoration: underline;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+    .clear-fix:after
+    {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 1em;
+    }
+
+    h2
+    {
+        font-size: 1em;
+    }
+
+    h3
+    {
+        font-size: 1em;
+    }
+
+    /* main layout
+----------------------------------------------------------*/
+    .header
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #8ac5e8;
+        text-align: left;
+    }
+
+
+
+    .header1
+    {
+        float: left;
+        clear: both;
+        width: 30%;
+        padding-top: 1%;
+        color: white;
+        text-align: center;
+        font-size: 1em;
+    }
+
+
+    .header2
+    {
+        float: left;
+        width: 70%;
+        text-align: left;
+        font-size: 1em;
+        font-family: sans-serif;
+    }
+
+
+    #newdiv
+    {
+        float: left;
+        clear: both;
+        position: absolute;
+        width: 68%;
+        padding: 1%;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        background-color: #bbbbbb;
+    }
+
+
+    .menu
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        line-height: 2em;
+        font-size: 1em;
+    }
+
+    .menu1
+    {
+        clear: both;
+        float: left;
+        text-align: left;
+        width: 40%;
+        line-height: 2em;
+        font: 1em bold;
+    }
+
+    .menu2
+    {
+        float: left;
+        text-align: left;
+        width: 60%;
+        line-height: 2em;
+        font: 1em bold;
+    }
+
+
+    .intro
+    {
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        text-align: left;
+        font-size: 1em;
+    }
+
+    .body1
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        padding: 1%;
+        background-color: #fff;
+        text-align: left;
+        background-image: url(/Images/background.png);
+        font-size: 1em;
+    }
+
+    .body1child1
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child1-left
+    {
+        float: left;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .body1child1-right
+    {
+        float: left;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        text-align: center;
+    }
+
+
+    .body1child2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        display: none;
+    }
+
+    .body1child2-left
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child2-right
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child3
+    {
+        display: none;
+    }
+
+    .body1child3-left
+    {
+        float: left;
+        clear: both;
+        width: 48%;
+        padding: 1%;
+    }
+
+    .body1child3-right
+    {
+        float: left;
+        width: 48%;
+        padding: 1%;
+    }
+
+    .body2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        padding-top: .5%;
+        background-color: #fff;
+        font-size: 1em;
+        /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+    }
+
+    .body2child2
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body2child3
+    {
+        display: none;
+    }
+
+        .body2child3 textarea
+        {
+            clear: both;
+            float: none;
+            width: 80%;
+            padding: 1%;
+        }
+
+    .body2child4
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body2child5
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .body3
+    {
+        width: 100%;
+        float: left;
+        clear: both;
+        padding-top: .5%;
+        padding-bottom: 1%;
+        background-color: #fff;
+        font-size: 1em;
+        /*position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    z-index: 700;*/
+    }
+
+
+    .image
+    {
+        text-align: center;
+        clear: both;
+        float: initial;
+    }
+
+        .image img
+        {
+            height: 80px;
+            width: 80px;
+        }
+
+    .image1
+    {
+        text-align: center;
+        clear: both;
+        z-index: 700;
+    }
+}

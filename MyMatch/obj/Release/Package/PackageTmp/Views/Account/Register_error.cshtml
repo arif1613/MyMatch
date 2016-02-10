@@ -1,0 +1,93 @@
+﻿@model MyMatch.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register_error";
+    Layout = "~/Views/Shared/_Layout_index.cshtml";
+}
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("register_error")
+        <table class="editor-small-header">
+            <tr>
+                <th style="color: Red">
+                    @Html.Label("User Name:")
+                </th>
+                <td>
+                    @Html.TextBoxFor(m => m.UserName)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </td>
+            </tr>
+            <tr>
+                <th style="color: Red">
+                    @Html.Label("Password:")
+                </th>
+                <td>
+                    @Html.PasswordFor(m => m.Password)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.Password)
+                </td>
+            </tr>
+            <tr>
+                <th style="color: Red">
+                    @Html.Label("Confirm Password:")
+                </th>
+                <td>
+                    @Html.PasswordFor(m => m.ConfirmPassword)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                </td>
+            </tr>
+            <tr>
+                <th style="color: Red">
+                    @Html.Label("E-mail:")
+                </th>
+                <td>
+                    @Html.TextBoxFor(m => m.email)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.email)
+                </td>
+            </tr>
+            <tr>
+                <th style="color: Red">
+                    @Html.Label("Date of Birth:")
+                </th>
+                <td>
+                    <input type="text" name="DOB" data-datepicker="true" />
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.DOB)
+                </td>
+            </tr>
+            <tr>
+                <th class="editor-label" style="color: Red">
+                    <a style="color: Red">Picture1:</a>
+                </th>
+                <td>
+                    <input type="file" name="picture_file1" />
+                </td>
+            </tr>
+            <tr>
+                <th class="editor-label" style="color: Red">
+                    <a style="color: Red">Picture2:</a>
+                </th>
+                <td>
+                    <input type="file" name="picture_file2" />
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="Register" />
+                </td>
+            </tr>
+        </table>
+    }
+
+

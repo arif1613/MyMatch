@@ -1,0 +1,12 @@
+﻿@model MyMatch.Models.message
+
+<div style="width: 100%">
+    <div id="header" class="banner-message" style="float:left;clear:both">
+        <img src="~/Images/Pictures/@(Model.msg_receiver)..1.png" height="30" width="30" />
+        <a href="@Url.Action("user_profile_Index", "user_profile", new { user_name=Model.msg_receiver})">@Model.msg_receiver</a>
+         got your message on @Model.msg_date.ToString("dd,MMM,yyyy") at @Model.msg_date.ToString("HH:mm")  :
+            <p>@Model.msg_body</p>
+    </div>
+
+</div>
+

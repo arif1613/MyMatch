@@ -1,0 +1,104 @@
+﻿@model IEnumerable<MyMatch.Models.ChatMessage>
+
+@{
+    ViewBag.Title = "chat_history";
+}
+
+
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+
+<div style="width: 100%; text-align: center; font-size: 1em">
+        <ul class="onlymobile">
+            <li>
+                @Html.ActionLink("[ Inbox ]", "message_inbox", "message")
+            </li>
+            <li>
+                 @Html.ActionLink("[ Outbox ]", "message_sent", "message")
+            </li>
+            <li>
+                @Html.ActionLink("[ Chat History ]", "chat_history", "message")
+            </li>
+        </ul>
+
+    <div class="hideinmobile" id="message_menu" style="width: 16%; padding: 2%; float: left; clear: both; text-align: left; background-color: #eee; margin-top: 4%">
+        <ul>
+            <li style="list-style: none">
+                @Html.ActionLink("Inbox", "message_inbox", "message")
+            </li>
+            <li style="list-style: none">
+                @Html.ActionLink("Outbox", "message_sent", "message")
+            </li>
+            <li style="list-style: none">
+                @Html.ActionLink("Chat History", "chat_history", "message")
+            </li>
+            <li style="list-style: none">
+                <a>----------</a>
+            </li>
+            <li style="list-style: none; color: red">If you delete a message, than the message will be deleted from receiver's inbox/outbox too.
+            </li>
+        </ul>
+    </div>
+    <div id="message_box" style="width: 80%;  float: left; height: 20em; overflow-y: scroll">
+        <table class="editor">
+            @foreach (var item in Model)
+            {    
+                <tr>
+
+                    <td>
+                        @Ajax.ActionLink("Details", "Details_chat", new { id = item.ID }, new AjaxOptions
+                   {
+                       UpdateTargetId = "details",
+                       InsertionMode = InsertionMode.Replace,
+                       HttpMethod = "GET"
+
+                   })
+                    </td>
+                    <td>
+                        <div class="banner">
+                            Chat history with @item.to
+                        </div>
+                    </td>
+
+                    <td style="font-size:1.5em">
+                        @Html.ActionLink("Delete", "Delete_chat", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        
+    </div>
+    
+</div>
+
+    <div id="details" style="height: 20em; overflow-y: scroll; clear: both; float: left; text-align: center;width:80%">
+        <a style="font: 12px Tahoma; color: blue">Chat History</a>
+    </div>
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+
+        <a style="color: white">@Html.ActionLink("My Profile", "Index", "myprofile")</a>
+        <br />
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+}
+
+@section search{
+    <div class="hideinmobile">
+        @Html.Action("search_Index", "search")
+    </div>
+}
+@section profileview{
+    <div class="hideinmobile">
+        @Html.Action("profile_viewer_partial", "Profile_Viewers")
+    </div>
+}

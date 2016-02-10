@@ -1,0 +1,49 @@
+﻿@model MyMatch.Models.LoginModel
+
+@{
+    ViewBag.Title = "login_error";
+    Layout = "~/Views/Shared/_Layout_index.cshtml";
+}
+
+
+@using (Html.BeginForm("Login", "Account"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+        <a style="color:red">The username and/or password provided is incorrect.</a>
+    <table class="editor-small-header">
+        <tr>
+            <th>
+                @Html.Label("User Name:")
+            </th>
+            <td>
+                @Html.EditorFor(model => model.UserName)
+            </td>
+            <td class="validation">
+                @Html.ValidationMessageFor(model => model.UserName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.Label("Password:")
+            </th>
+            <td>
+                @Html.EditorFor(model => model.Password)
+            </td>
+            <td class="validation">
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="hidden" name="RememberMe" value="true" />
+            </td>
+            <td>
+                <input type="submit" class="user" value="Login" />
+                <a href="@Url.Action("password_retrival", "Home")">Forget Password?</a>
+                
+            </td>
+    </table>
+}
+

@@ -1,0 +1,379 @@
+﻿@model IEnumerable<MyMatch.Models.show_interest>
+
+@{
+    Layout = null;
+}
+
+
+<!--Script references. -->
+
+<link href="~/Content/ChatRoom.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.signalR-2.0.2.min.js"></script>
+<script src="~/signalr/hubs"></script>
+
+@Html.Action("Chat_normal", "Home")
+<div style="width: 100%; float: left; clear: both">
+    <input type="hidden" id="displayname" value="@User.Identity.Name" hidden="hidden"/>
+    <input type="hidden" id="status" value="@ViewBag.chat_status"/>
+    <audio id="audio" src="~/Content/beep-08b.wav" preload="auto"></audio>
+    <audio id="audio1" src="~/Content/beep-07.wav" preload="auto"></audio>
+</div>
+
+
+<div style="background-color: blue; color: white; width: 100%">Online Users</div>
+
+<div style="width: 100%; float: left; clear: both; text-align: center; height: inherit">
+    @if (ViewBag.chat_status == "online")
+    {
+        <div class="members">
+
+            @foreach (var v in ViewBag.total_user)
+            {
+                if (v != User.Identity.Name)
+                {
+                <div style="width: 100%; clear: both; float: left;margin-bottom:.1em">
+                    <div style="width: 15%; float: left">
+                        <a href="@Url.Action("user_profile_Index", "user_profile", new { user_name = v })">
+                            <img src="~/Images/Pictures/@(v)..1.png" style="height:2em;width:2em" />
+                        </a>
+                    </div>
+                    <div style="width: 85%; float: left">
+
+                        <input type="button" class="user1" value="@v" data-click="true"/>
+                    </div>
+                </div>
+                <br />      
+                }
+                else
+                {
+                
+                <div style="width: 100%; clear: both; float: left;margin-bottom:.1em">
+                    <div style="width: 15%; float: left">
+                        <a href="@Url.Action("user_profile_Index", "user_profile", new { user_name = v })">
+                            <img src="~/Images/Pictures/@(v)..1.png" style="height:2em;width:2em" />
+                        </a>
+                    </div>
+                    <div style="width: 85%; float: left">
+
+                        <input type="button" class="user1" value="@v" data-click="true"/>
+                    </div>
+                </div>
+                <br />   
+                
+                }
+
+            }
+            @foreach (var k in ViewBag.onlined)
+            {
+                <input type="hidden" class="dn" value="@k" data-check="true" />                                                        
+                
+            }
+            <script type="text/javascript">
+                var a = [];
+                $(":input[data-check]").each(function () {
+                    var f = $(this).val();
+                    a.push(f);
+                });
+                $(":input[data-click]").each(function () {
+                    var p = $(this).val();
+                    var n;
+                    for (n = 0; n < a.length; n++) {
+                        if (a[n] == p) {
+                            //if ($(this).hasClass("user1")) {
+                            $(this).removeClass("user1").addClass("user");
+                            //}
+                        }
+                    }
+
+                });
+
+            </script>
+
+        </div>
+        
+        <p id="touser" style="background-color: blue; color: white; text-align: center">@ViewBag.receiver</p>
+        
+        <div class="total" style="width: 98%; padding: 1%; float: left; clear: both">
+
+            <ul class="pc_ul" style="text-align: left; list-style: none; padding: .25%">
+                @foreach (var r in ViewBag.chat_history)
+                { 
+                    <li class="listing">@r</li>
+            
+                }
+            </ul>
+
+            <table class="editor-chat">
+                <tr>
+                    <th>
+                        <input type="text" id="msg" />
+                    </th>
+                    <td>
+                        <input type="button" class="send_private" value="send" />
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <br />
+        <br />
+
+       
+        
+        <div style="width: 100%; float: left; text-align: center; padding-bottom: 5%">
+            <br />
+            <br />
+            <input type="submit" id="chat" value="Connect Chat" class="user1" />
+            <input type="submit" id="disconnect" value="Disconnect Chat" class="user" />
+        </div>
+
+    }
+
+    @if (ViewBag.chat_status == "offline")
+    {
+        <div class="members">
+
+            @foreach (var k in ViewBag.total_user)
+            {
+                if (k != User.Identity.Name)
+                {
+                <div style="width: 100%; clear: both; float: left;margin-bottom:.1em">
+                    <div style="width: 15%; float: left">
+                        <a href="@Url.Action("user_profile_Index", "user_profile", new { user_name = k })">
+                            <img src="~/Images/Pictures/@(k)..1.png" style="height:2em;width:2em" />
+                        </a>
+                    </div>
+                    <div style="width: 80%; float: left">
+
+                        <input type="button" class="user1" value="@k" data-click="true"/>
+                    </div>
+                </div>
+                <br />
+                }
+                else
+                {
+                <div style="width: 100%; clear: both; float: left;margin-bottom:.1em">
+                    <div style="width: 15%; float: left">
+                        <a href="@Url.Action("user_profile_Index", "user_profile", new { user_name = k })">
+                            <img src="~/Images/Pictures/@(k)..1.png" style="height:2em;width:2em" />
+                        </a>
+                    </div>
+                    <div style="width: 80%; float: left">
+
+                        <input type="button" class="user1" value="@k" data-click="true"/>
+                    </div>
+
+                </div>
+                <br />
+                
+                }
+
+            }
+
+        </div>
+
+        <p id="touser" style="background-color: blue; color: white; text-align: center"></p>
+            
+        <div class="total" style="width: 98%; padding: 1%; float: left; clear: both">
+            <ul class="pc_ul" style="text-align: left; list-style: none; padding: .25%">
+            </ul>
+            <table class="editor-chat" hidden="hidden">
+                <tr>
+                    <th>
+                        <input type="text" id="msg" />
+                    </th>
+                    <td>
+                        <input type="button" class="send_private" value="send" />
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div style="width: 100%; float: left; text-align: center; padding-bottom: 5%">
+            <br />
+            <br />
+            <input type="submit" id="chat" value="Connect Chat" class="user" />
+            <input type="submit" id="disconnect" value="Disconnect Chat" class="user1" />
+        </div>
+
+    }
+</div>
+
+
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        //$(".editor-chat").hide();
+        var t = document.getElementById("#status");
+        var t1 = $(t).val();
+        
+        var chat = $.connection.chatHub;
+
+        $.connection.hub.start().done(function () {
+            $("#chat").click(function () {
+                var d = document.getElementById("displayname");
+                var name = $(d).val();
+                chat.server.connect(name);
+                chat.server.connect1(name);
+            });
+
+            $('.pc_ul').hover(function () {
+                var username = document.getElementById("displayname");
+                var client_name = $('#touser').text();
+                chat.server.list_hover(username,client_name);
+            });
+
+            $('#disconnect').click(function () {
+                var name = $('#displayname').val();
+                chat.server.disconnect(name);
+
+            });
+
+            $(":input[data-click]").each(function () {
+                $(this).click(function () {
+                    var u = $("#displayname").val();
+                    var s = $(this).val();
+                    if ($(this).hasClass("notify")) {
+                        $(this).removeClass("notify").addClass("user");
+
+                    }
+                    chat.server.showwindow(u, s);
+                });
+            });
+            $(".send_private").click(function () {
+
+                if ($('#msg').val().length > 0) {
+                    var u = $('#displayname').val();
+                    var s = $('#touser').text();
+                    var m = document.getElementById("msg");
+                    chat.server.privateMessage(u, s, $(m).val());
+
+                };
+                $('.pc_ul li:first-child').remove();
+                $(m).val('').focus();
+            });
+        });
+        chat.client.onConnected = function (name) {
+            var u = $("#displayname").val();
+            var status = $('#status').val();
+
+            if (u != name) {
+                if (status == "online") {
+                    $(":input[data-click]").each(function () {
+                        var p = $(this).val();
+                        if (p == name) {
+                            if ($(this).hasClass("user1")) {
+                                $(this).removeClass("user1").addClass("user");
+                                document.getElementById('audio').play();
+                            }
+                        }
+                    });
+                }
+            }
+        };
+        chat.client.onConnected1 = function (name, li) {
+
+            var c = document.getElementById("chat");
+            $(c).removeClass("user").addClass("user1");
+            var disconnect = document.getElementById("disconnect");
+            $(disconnect).removeClass("user1").addClass("user");
+            $("#status").val("online");
+            $(".total").show();
+            
+            $(":input[data-click]").each(function () {
+                var p = $(this).val();
+                var i;
+                for (i = 0; i < li.length; i++) {
+                    if (p == li[i]) {
+                        if ($(this).hasClass("user1")) {
+                            $(this).removeClass("user1").addClass("user");
+                        }
+
+                    }
+                }
+                if (p == name) {
+                    $(this).removeClass("user").addClass("user1");
+                }
+
+            });
+        };
+
+        chat.client.onDisconnected1 = function (name) {
+
+            var i;
+            $(":input[class=user]").each(function () {
+                var p = $(this).val();
+                if (p == name) {
+                    $(this).removeClass("user").addClass("user1");
+                };
+            });
+            var u = $("#displayname").val();
+            if (u == name) {
+
+                $(":input[class=user]").each(function () {
+                    $(this).removeClass("user").addClass("user1");
+                });
+                var c = document.getElementById("chat");
+                $(c).removeClass("user1").addClass("user");
+                var disconnect = document.getElementById("disconnect");
+                $(disconnect).removeClass("user").addClass("user1");
+                $("#status").val("offline");
+            }
+
+        };
+        chat.client.onDisconnected2 = function () {
+            $('#status').val('offline');
+            $(".total").hide();
+            $(".editor-chat").hide();
+
+        };
+        chat.client.primessage = function (s, li) {
+            $(".editor-chat").show();
+            $("#touser").text(s);
+            var i;
+            $(".pc_ul").empty();
+            for (i = 0; i < li.length; i++) {
+                $(".pc_ul").append('<li class="listing">' + li[i] + '</li>');
+
+            };
+        };
+        chat.client.show_pri_win = function (u, s, msg) {
+
+            var user = $("#displayname").val();
+            var r = $("#touser").text();
+            if (user == s) {
+                if (r != u) {
+                    $(":input[data-click]").each(function () {
+                        var p = $(this).val();
+                        if (p == u) {
+                            document.getElementById('audio1').play();
+                            $(this).removeClass("user").addClass("notify");
+                        };
+                    });
+                }
+                else {
+                    $(".editor-chat").show();
+                    $(".pc_ul").append('<li class="listing">' + r + ":  " + msg + '</li>');
+
+                };
+            };
+        };
+
+
+        chat.client.privatemsg = function (u, s, msg) {
+
+            var p = $("#touser").text();
+            var t = $("#displayname").val();
+            if (p == u) {
+                $(".pc_ul").append('<li class="listing1">' + s + ":  " + msg + '</li>');
+            };
+            if (p == s) {
+                $(".pc_ul").append('<li class="listing1">' + u + ":  " + msg + '</li>');
+            };
+        };
+    });
+
+</script>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Indian Matrimonial-@ViewBag.Title</title>
+    <meta name="Description" content="indianbibah is an indian matrimonial website with free chat option and a lot of great advanced features to meet your perfect match.indian matrimony-@ViewBag.Title">
+    <meta name="KEYWORDS" content="matrimonial,matrimony,matrimonials,indian matrimonials,marriage,a1,bharat matrimony,shaadi.com,marriage sites,matchmaking,shaadi,indianbibah.com,indian vivah,india marriage,indian matrimony-@ViewBag.Title" />
+    <meta name="robots" content="Index, follow" />
+    <link href="~/Content/images/icon.jpg" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <link href="../../Content/site_index.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/site_index.css" rel="stylesheet" type="text/css" media="handheld" />
+    <link href="../../Content/banners.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/banners.css" rel="stylesheet" type="text/css" media="handheld" />
+    <link href="../../Content/Style_tables.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/Style_tables.css" rel="stylesheet" type="text/css" media="handheld" />
+    <link href="../../Content/ChatRoom.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/ChatRoom.css" rel="stylesheet" type="text/css" media="handheld" />
+    <meta name="msvalidate.01" content="845417CD308513051CF8170D3D48E39B" />
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-49383221-1', 'indianbibah.com');
+        ga('send', 'pageview');
+
+</script>
+    @Scripts.Render("~/bundles/jquery")
+
+</head>
+<body>
+    <div>
+        <div class="index_body1">
+            <a href="~/Home/Index">
+                <div class="index_header">
+                    <div class="index_header1">
+                        <img src="~/Content/images/logo.jpg" height="100" width="100" alt="indian matrimonial" />
+                    </div>
+
+                    <div class="index_header2">
+                        IndianBibah
+                    </div>
+                </div>
+            </a>
+            <div class="index_intro">
+                @RenderBody()
+            </div>
+
+        </div>
+        <div class="index_body2">
+            <div class="index_body2child1">
+                @RenderSection("login1", false)
+            </div>
+            <div class="index_body2child2">
+                @RenderSection("register1", false)
+            </div>
+
+        </div>
+        <div class="hideinmobile" style="width:100%;text-align:center">
+            <img src="~/Content/paypal.jpg" style="width:150px;height:120px" />
+        </div>
+        <footer>
+            <a>Contact: info@@indianbibah.com</a>
+
+        </footer>
+        @Scripts.Render("~/bundles/jqueryui")
+        @Styles.Render("~/Content/css", "~/Content/themes/base/css")
+        @Scripts.Render("~/bundles/modernizr", "~/bundles/jqueryval")
+    </div>
+</body>
+</html>

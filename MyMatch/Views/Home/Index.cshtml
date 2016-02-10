@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Indian Matrimonial Site";
+    Layout = "~/Views/Shared/_Layout_index.cshtml";
+    
+}
+<meta name="Description" content="indianbibah is an indian matrimonial website with lots of great advance features to meet your perfect match.">
+<meta name="KEYWORDS" content="indian matrimonial,indian matchmaking,india matrimonial,indian matchmaking site,india shadi">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+<meta name="msvalidate.01" content="845417CD308513051CF8170D3D48E39B" />
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+
+<div class="hideinmobile" style="width: 100%; background-color: #d3caca; float: left; clear: both; text-align: center; font-size: 1.5em; line-height: 1.5em; color: white">
+
+    <table class="editor">
+        <tr>
+            <td style="text-align:center">
+                @Ajax.ActionLink("Our Price", "our_price", new AjaxOptions
+{
+    UpdateTargetId = "view1",
+    LoadingElementId = "ajax1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+            </td>
+            <td style="text-align:center">
+                @Ajax.ActionLink("Price Comparison", "price_comparison", new AjaxOptions
+{
+    UpdateTargetId = "view1",
+    LoadingElementId = "ajax1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+
+            </td>
+            <td style="text-align:center">
+                @Ajax.ActionLink("Features Comparison", "feature_comparison", new AjaxOptions
+{
+    UpdateTargetId = "view1",
+    LoadingElementId = "ajax1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+<div id="ajax1" style="clear: both; float: left; text-align: center; display: none; width: 100%">
+    <img src="~/Content/ajax-loader.gif" />
+</div>
+<div id="view1" style="clear: both; float: left; text-align: center; width: 98%; padding: 1%">
+</div>
+
+
+@Html.Action("index_intro", "Home")
+
+<div id="form_body1" style="background-color: #ccc" class="onlymobile">
+    @Html.Action("Login", "Account")
+    <br />
+    <div style="text-align: center">
+        @Ajax.ActionLink("Forget Password?", "password_retrival", new AjaxOptions
+   {
+
+       UpdateTargetId = "form_body1",
+       LoadingElementId = "ajaxloader",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+    </div>
+    <br />
+    <div class="onlymobile" style="background-color: #ccc; text-align: center;padding-bottom:.5em">
+        <a:link style="color:blue; text-decoration: underline">@Html.ActionLink("Register Here", "Register1")</a:link><a style="color:red">(Free)</a> <a>if you don't have an account</a>
+        </div>
+    <div id="ajaxloader" style="display: none">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+</div>
+
+
+@section login1{
+
+    <div class="hideinmobile">
+        <div id="form_body" style="background-color: #ccc">
+            @Html.Action("Login", "Account")
+            <div>
+                @Ajax.ActionLink("Forget Password?", "password_retrival", new AjaxOptions
+   {
+
+       UpdateTargetId = "form_body",
+       LoadingElementId = "ajax",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+            </div>
+            <div id="ajax" style="display: none">
+                <img src="~/Content/ajax-loader.gif" />
+            </div>
+        </div>
+    </div>
+}
+
+@section register1{
+    <div class="hide-in-mobile">
+        @Html.Action("Register", "Account")
+    </div>
+}

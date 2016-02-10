@@ -1,0 +1,38 @@
+﻿@model MyMatch.Models.profile_logininfo
+
+@section picture{
+    @Html.Action("my_picture", "myprofile", new { user_name = @User.Identity.Name })
+}
+
+@section basicinfo{
+<h3>Hello, @Model.username</h3>
+<P style="font:14px bold; color:red">Are you sure that you want to delete your profile?</P>
+<br />
+@using (Html.BeginForm("delete_profile", "myprofile", new { id=Model.ID})){
+
+<input type="submit" value="confirm" />
+}
+<br />
+@Html.ActionLink("Not now","Index")
+}
+
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+
+        <a style="color: white">Hello, @User.Identity.Name</a>
+        <br />
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+}
+@section search{
+    @Html.Action("search_Index", "search")
+}

@@ -1,0 +1,199 @@
+﻿@model MyMatch.Models.profile_basicinfo
+
+<div id="edit" style="width:100%" class="hideinmobile">
+    <div class="banner">
+        Basic Informations
+    @if (Model.username == User.Identity.Name)
+    { 
+        <span style="float: right">
+            @Ajax.ActionLink("Edit section", "Edit", new { id = Model.ID }, new AjaxOptions
+       {
+           UpdateTargetId = "edit",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </span>
+    }
+    </div>
+
+    <table class="editor-small-header">
+        <tr>
+            <th>Name:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.Name
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>DOB:
+            </th>
+            <td>
+                @Model.DOB.ToString("dd,MMM-yyyy")
+            </td>
+        </tr>
+        <tr class="hidemobile">
+            <th>Age:
+            </th>
+            <td>
+                @Model.age
+            </td>
+        </tr>
+        <tr class="hidemobile">
+            <th>Gender:
+            </th>
+            <td>
+                @Model.sex
+            </td>
+        </tr>
+        <tr>
+            <th>Languages:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.languages
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Marital Status:
+            </th>
+            <td>
+                @Model.marital_status
+            </td>
+        </tr>
+        <tr class="hidemobile">
+            <th>Height(cm.):
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.height
+                </div>
+            </td>
+        </tr>
+        <tr class="hidemobile">
+            <th>Weight(kg.):
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.weight
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Religion:
+            </th>
+            <td>
+                @Model.Religion
+            </td>
+        </tr>
+        <tr>
+            <th>Cast:
+            </th>
+            <td>
+                @Model.religion_cast
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<div id="editm" style="width:100%" class="onlymobile">
+    <div class="banner">
+        Basic Informations
+    @if (Model.username == User.Identity.Name)
+    { 
+        <span style="float: right">
+            @Ajax.ActionLink("Edit", "Edit", new { id = Model.ID }, new AjaxOptions
+       {
+           UpdateTargetId = "mobile_view",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </span>
+    }
+    </div>
+
+    <table class="editor-small-header">
+        <tr>
+            <th>Name:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.Name
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>DOB:
+            </th>
+            <td>
+                @Model.DOB.ToString("dd,MMM-yyyy")
+            </td>
+        </tr>
+        <tr class="hidemobile">
+            <th>Age:
+            </th>
+            <td>
+                @Model.age
+            </td>
+        </tr>
+        <tr class="hidemobile">
+            <th>Gender:
+            </th>
+            <td>
+                @Model.sex
+            </td>
+        </tr>
+        <tr>
+            <th>Languages:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.languages
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Marital Status:
+            </th>
+            <td>
+                @Model.marital_status
+            </td>
+        </tr>
+        <tr class="hidemobile">
+            <th>Height(cm.):
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.height
+                </div>
+            </td>
+        </tr>
+        <tr class="hidemobile">
+            <th>Weight(kg.):
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.weight
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Religion:
+            </th>
+            <td>
+                @Model.Religion
+            </td>
+        </tr>
+        <tr>
+            <th>Cast:
+            </th>
+            <td>
+                @Model.religion_cast
+            </td>
+        </tr>
+
+    </table>
+</div>

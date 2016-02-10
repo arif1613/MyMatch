@@ -1,0 +1,30 @@
+﻿<div id="mver_result">
+    @using (Ajax.BeginForm("mobile_ver_result", "verification", new AjaxOptions
+{
+    UpdateTargetId = "mver_result",
+    LoadingElementId = "ajax_loader2",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST"
+}))
+    {
+        <p style="text-align: left; font-size: .8em">
+            @if (ViewBag.sent == "yes")
+            { 
+                <a>Your mobile verification code already sent today. Verify with that code.</a>
+            }
+            else
+            {
+
+                <a>Please write your verification code sent to your contact mobile number below and press OK to verify:</a>
+             
+            }
+        </p>
+
+        <input type="number" name="m_code" />
+        <input type="submit" value="OK" />
+    }
+    <br />
+    <div id="ajax_loader2" style="clear: both; float: left; width: 100%; text-align: center; display: none">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+</p>

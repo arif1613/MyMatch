@@ -1,0 +1,68 @@
+﻿@model System.Collections.Generic.IEnumerable<MyMatch.Models.show_interest>
+
+@{
+    ViewBag.Title = "ïnterested_people";
+}
+
+
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<h3>@ViewBag.count peoples are interested about you.</h3>
+<br />
+@foreach (var x in Model)
+{
+    <div class="banner-small">
+        <a style="color: maroon">@x.interested_people</a> showed interest on @x.interest_date.ToString("dd,MMM-yyyy")
+        @Html.Action("display_search_result", "search", new { user_name = x.interested_people })
+    </div>
+    <span style="float: right">
+        @Html.ActionLink("Remove from list", "remove_from_list", new { interested_people = x.interested_people })
+    </span>
+}
+<br />
+
+@for (int i = 1; i <= @ViewBag.totalpage; i++)
+{
+    using (Html.BeginForm("ïnterested_people", "myprofile"))
+    {
+        if (i == @ViewBag.pagenumber)
+        {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left;color:red" />
+        }
+        else
+        {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left" />
+        }
+    }
+}
+
+
+
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+
+        <a style="color: white">@Html.ActionLink("My Profile", "Index", "myprofile")</a>
+        <br />
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+}
+@section search{
+
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    @Html.Action("search_Index", "search")
+}
+
+@section profileview{
+    @Html.Action("profile_viewer_partial", "Profile_Viewers")
+}
+@section message{
+    @Html.Action("message_partial", "message")
+}

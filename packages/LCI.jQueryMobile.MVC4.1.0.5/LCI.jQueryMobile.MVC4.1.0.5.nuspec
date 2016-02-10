@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>LCI.jQueryMobile.MVC4</id>
+    <version>1.0.5</version>
+    <title>LCI.jQueryMobile.MVC4</title>
+    <authors>Luppes Consulting,  Inc.</authors>
+    <owners>Luppes Consulting,  Inc.</owners>
+    <licenseUrl>http://www.luppes.com/FoodTruck/Home/License</licenseUrl>
+    <projectUrl>http://www.luppes.com/FoodTruck/</projectUrl>
+    <iconUrl>http://www.luppes.com/FoodTruck/content/images/MvcFoodTruckNuGetImage.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>This package will update your MVC4 project, installing jQuery.mobile for you and adding in adaptive view features for mobile devices, returning unique views to desktops, tablets, and phones. It will create a DisplayModeProviders class and the ViewSwitcher code for you and includes the necessary MVC4 Shared Layout files for those mobile pages. With a couple of quick edits, you'll have adaptive mobile views running in your MVC4 site in minutes.</description>
+    <summary>This package installs jQuery.Mobile and supporting files in your existing MVC4 project.</summary>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2012, Luppes Consulting, Inc.</copyright>
+    <language />
+    <tags>MVC MVC4 ASP.NET jQuery Mobile jQuery.Mobile Responsive Web</tags>
+    <dependencies>
+      <dependency id="jQuery.Mobile" version="1.1.1" />
+    </dependencies>
+  </metadata>
+</package>

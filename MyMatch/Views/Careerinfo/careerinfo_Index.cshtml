@@ -1,0 +1,132 @@
+﻿@model MyMatch.Models.profile_careerinfo
+
+<div id="edit1" class="hideinmobile">
+    <div class="banner">
+        Career Informations
+    @if (Model.username == User.Identity.Name)
+    { 
+        <span style="float: right">
+            @Ajax.ActionLink("Edit section", "careerinfo_edit", new { id = Model.ID }, new AjaxOptions
+       {
+           UpdateTargetId = "edit1",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </span>
+    }
+    </div>
+
+    <table class="editor-small-header">
+        <tr>
+            <th>Education level:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.education
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Last Educational Institution:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.education_institute
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Current Profession:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.profession
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Current Work Place:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.work_company
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Current Salary/month(if applicable):
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.salary
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<div id="edit3m" class="onlymobile">
+    <div class="banner">
+        Career Informations
+    @if (Model.username == User.Identity.Name)
+    { 
+        <span style="float: right">
+            @Ajax.ActionLink("Edit", "careerinfo_edit", new { id = Model.ID }, new AjaxOptions
+       {
+           UpdateTargetId = "mobile_view",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </span>
+    }
+    </div>
+
+    <table class="editor-small-header">
+        <tr>
+            <th>Education level:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.education
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Last Educational Institution:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.education_institute
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Current Profession:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.profession
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Current Work Place:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.work_company
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Current Salary/month(if applicable):
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.salary
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

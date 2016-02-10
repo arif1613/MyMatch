@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "refresh_DBIndex";
+}
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+
+@using (Html.BeginForm("del_viewerDB", "RefreshDB"))
+{
+    <table>
+        <tr>
+            <th>Profile Viewer DB:
+            </th>
+            <td>From:<input type="datetime" data-datepicker="true" name="fromdate" />
+            </td>
+            <td>To:<input type="datetime" data-datepicker="true" name="todate" />
+            </td>
+            <td>
+                <input type="submit" value="Delete" />
+            </td>
+        </tr>
+
+    </table>
+}
+@using (Html.BeginForm("del_messageDB", "RefreshDB"))
+{
+    <table>
+        <tr>
+            <th>Profile Message DB:
+            </th>
+            <td>From:<input type="datetime" data-datepicker="true" name="fromdate" />
+            </td>
+            <td>To:<input type="datetime" data-datepicker="true" name="todate" />
+            </td>
+            <td>
+                <input type="submit" value="Delete" />
+            </td>
+        </tr>
+
+    </table>
+}
+@using (Html.BeginForm("del_chatDB", "RefreshDB"))
+{
+    <table>
+        <tr>
+            <th>Chat DB:
+            </th>
+            <td>From:<input type="datetime" data-datepicker="true" name="fromdate" />
+            </td>
+            <td>To:<input type="datetime" data-datepicker="true" name="todate" />
+            </td>
+            <td>
+                <input type="submit" value="Delete" />
+            </td>
+        </tr>
+
+    </table>
+}
+
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+
+        <a style="color: white">@Html.ActionLink("My Profile", "Index", "myprofile")</a>
+        <br />
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+}

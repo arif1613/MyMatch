@@ -1,0 +1,19 @@
+﻿<div id="ever_result">
+    @using (Ajax.BeginForm("email_ver_result", "verification", new AjaxOptions
+{
+    UpdateTargetId = "ever_result",
+    LoadingElementId = "ajax_loader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST"
+}))
+    {
+        <p style="text-align:left;font-size:.8em">Please write your verification code sent to your contact e-mail address below and press OK to verify:</p>
+
+        <input type="number" name="e_code" />
+        <input type="submit" value="OK" />
+    }
+    <br />
+    <div id="ajax_loader1" style="clear: both; float: left; width: 100%; text-align: center; display: none">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+</div>

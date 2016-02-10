@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MyMatch.Models.profile_viewers>
+
+@{
+    ViewBag.Title = "profile_viewer_Index";
+}
+
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+
+@if (ViewBag.status == "Normal")
+{ 
+    @Html.Action("pv_normal", "Profile_Viewers")
+}
+<h3 class="banner">@ViewBag.total people(s) visited your profile</h3>
+<br />
+
+
+@foreach (var x in Model)
+{
+    @Html.Action("profile_viewers_show", "Profile_Viewers", new { viewer = x.username })
+   
+}
+
+<br />
+@for (int i = ViewBag.pagenumber; i <= ViewBag.total_page; i++)
+{
+    using (Html.BeginForm("profile_viewer_Index", "Profile_Viewers"))
+    {
+        if (i == @ViewBag.pagenumber)
+        {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left;color:red" />
+        }
+        else
+        {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left" />
+        }
+
+    }
+
+}
+
+
+
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+
+        <a style="color: white">@Html.ActionLink("My Profile", "Index", "myprofile")</a>
+        
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+}
+
+
+@section search{
+    <div class="hideinmobile">
+    @Html.Action("search_Index", "search")
+        </div>
+}
+
+@section profileview{
+    <br />
+    <div class="banner">
+        <a>Profile viewers(@ViewBag.weeklytotal) for last 7 days</a>
+    </div>
+    <div style="text-align: center">
+        <img src="~/Images/pv_@(User.Identity.Name).png" alt="null" />
+    </div>
+}
+
+@section message{
+    @Html.Action("message_partial", "message")
+}

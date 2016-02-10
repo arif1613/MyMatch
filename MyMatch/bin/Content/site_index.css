@@ -1,0 +1,1262 @@
+﻿
+html
+{
+    background-color: #fff;
+    text-align: center;
+}
+
+body
+{
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    font-size: .70em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    text-align: center;
+    z-index: 650;
+}
+#form_body
+{
+    display:block;
+}
+
+.onlymobile
+{
+    display: none;
+}
+
+#hide-in-mobile
+{
+    display: block;
+}
+
+.hideinmobile
+{
+    display: block;
+}
+/*datepicker*/
+.d a.ui-state-default
+{
+    color: Black;
+    background-color: Green;
+    background: Green;
+}
+
+.ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+{
+    color: red;
+}
+
+a
+{
+    color: #333;
+}
+
+    a:link
+    {
+        color: #823434;
+        font-size: .95em;
+        text-decoration: none;
+    }
+
+    a:active
+    {
+        color: #944b4b;
+    }
+
+    a:visited
+    {
+        color: #4d4848;
+    }
+
+    a:link:hover
+    {
+        color: #944b4b;
+        text-decoration: underline;
+    }
+
+header, footer, hgroup,
+nav, section
+{
+    display: block;
+}
+
+.clear-fix:after
+{
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+h1, h2, h3
+{
+    color: #000;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h1
+{
+    font-size: 2em;
+}
+
+h2
+{
+    font-size: 1.75em;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+.index_body1
+{
+    float: left;
+    clear: both;
+    width: 68%;
+    background-color: #fff;
+    text-align: left;
+    z-index: 100;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+
+.index_header
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.index_header1
+{
+    float: left;
+    width: 45%;
+    height: 100px;
+    text-align: left;
+    background-color: #8ac5e8;
+}
+
+.index_header2
+{
+    float: left;
+    width: 55%;
+    padding-top: 20px;
+    text-align: left;
+    font-size: 1.5em;
+    font-size: 24px;
+    color: red;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: #8ac5e8;
+    height: 80px;
+}
+
+.index_intro
+{
+    float: left;
+    clear: both;
+    width: 100%;
+    text-align: left;
+    background-image: url(/Images/background.png);
+}
+
+.index_body2
+{
+    float: left;
+    width: 28%;
+    background-color: #fff;
+    z-index: 700;
+    padding-top: 2%;
+    padding-right: 2%;
+    background-image: url(/Images/background1.png);
+}
+
+.index_body2child1
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.index_body2child2
+{
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+@media handheld
+{
+    html
+    {
+        background-color: #fff;
+        text-align: center;
+    }
+
+    #login_form
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    #register_form
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    #div_pass
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    body
+    {
+        width: 100%;
+        background-color: #fff;
+        color: #333;
+        font-size: .70em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        z-index: 650;
+    }
+
+    .onlymobile
+    {
+        display: block;
+    }
+
+    #hide-in-mobile
+    {
+        display: none;
+    }
+
+    .hideinmobile
+    {
+        display: none;
+    }
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        color: Black;
+        background-color: Green;
+        background: Green;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+        font-size: .95em;
+    }
+
+        a:link
+        {
+            color: #823434;
+            font-size: .95em;
+            text-decoration: none;
+        }
+
+        a:active
+        {
+            color: #944b4b;
+        }
+
+        a:visited
+        {
+            color: #4d4848;
+            font-size: .95em;
+        }
+
+        a:link:hover
+        {
+            color: #944b4b;
+            text-decoration: underline;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+    .clear-fix:after
+    {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 2em;
+    }
+
+    h2
+    {
+        font-size: 1.75em;
+    }
+
+    h3
+    {
+        font-size: 1.2em;
+    }
+
+    .index_body1
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        background-color: #fff;
+        text-align: left;
+        padding: 1%;
+    }
+
+    .index_header
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        height: 30px;
+    }
+
+    .index_header1
+    {
+        float: left;
+        width: 45%;
+        text-align: left;
+        background-color: #8ac5e8;
+    }
+
+        .index_header1 img
+        {
+            height: 30px;
+            width: 30px;
+        }
+
+    .index_header2
+    {
+        float: left;
+        width: 55%;
+        text-align: left;
+        font-size: 1.5em;
+        font-family: sans-serif;
+        font-weight: bold;
+        background-color: #8ac5e8;
+        padding: 0;
+    }
+
+    .index_intro
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        text-align: left;
+    }
+
+    .index_body2
+    {
+        clear: both;
+        float: left;
+        width: 98%;
+        padding: 1%;
+        background-color: #fff;
+    }
+
+    .index_body2child1
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .index_body2child2
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px)
+{
+
+    html
+    {
+        background-color: #fff;
+        text-align: center;
+    }
+
+    #login_form
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    #register_form
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    #div_pass
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    body
+    {
+        width: 100%;
+        background-color: #fff;
+        color: #333;
+        font-size: .70em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        z-index: 650;
+    }
+
+    .hideinmobile
+    {
+        display: none;
+    }
+
+    .onlymobile
+    {
+        display: block;
+    }
+
+    #hide-in-mobile
+    {
+        display: none;
+    }
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        color: Black;
+        background-color: Green;
+        background: Green;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+        font-size: .95em;
+    }
+
+        a:link
+        {
+            color: #823434;
+            font-size: .95em;
+            text-decoration: none;
+        }
+
+        a:active
+        {
+            color: #944b4b;
+            font-size: .95em;
+        }
+
+        a:visited
+        {
+            color: #4d4848;
+            font-size: .95em;
+        }
+
+        a:link:hover
+        {
+            color: #944b4b;
+            text-decoration: underline;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+    .clear-fix:after
+    {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 2em;
+    }
+
+    h2
+    {
+        font-size: 1.75em;
+    }
+
+    h3
+    {
+        font-size: 1.2em;
+    }
+
+    .index_body1
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        background-color: #fff;
+        text-align: left;
+        padding: 1%;
+    }
+
+    .index_header
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        height: 30px;
+    }
+
+    .index_header1
+    {
+        float: left;
+        width: 45%;
+        text-align: left;
+        background-color: #8ac5e8;
+    }
+
+        .index_header1 img
+        {
+            height: 30px;
+            width: 30px;
+        }
+
+    .index_header2
+    {
+        float: left;
+        width: 55%;
+        text-align: left;
+        font-size: 1.5em;
+        font-family: sans-serif;
+        font-weight: bold;
+        background-color: #8ac5e8;
+        padding: 0;
+    }
+
+    .index_intro
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        background-image: url(/Images/background1.png);
+        text-align: left;
+    }
+
+    .index_body2
+    {
+        clear: both;
+        float: left;
+        width: 98%;
+        padding: 1%;
+        background-color: #fff;
+    }
+
+    .index_body2child1
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .index_body2child2
+    {
+        display: none;
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+
+    html
+    {
+        background-color: #fff;
+        text-align: center;
+    }
+
+    #login_form
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    #register_form
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    #div_pass
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    body
+    {
+        width: 100%;
+        background-color: #fff;
+        color: #333;
+        font-size: .70em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        z-index: 650;
+    }
+
+    .onlymobile
+    {
+        display: block;
+    }
+
+    .hideinmobile
+    {
+        display: none;
+    }
+
+    #hide-in-mobile
+    {
+        display: none;
+    }
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        color: Black;
+        background-color: Green;
+        background: Green;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+        font-size: .95em;
+    }
+
+        a:link
+        {
+            color: #823434;
+            font-size: .95em;
+            text-decoration: none;
+        }
+
+        a:active
+        {
+            color: #944b4b;
+            font-size: .95em;
+        }
+
+        a:visited
+        {
+            color: #4d4848;
+            font-size: .95em;
+        }
+
+        a:link:hover
+        {
+            color: #944b4b;
+            text-decoration: underline;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+    .clear-fix:after
+    {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 2em;
+    }
+
+    h2
+    {
+        font-size: 1.75em;
+    }
+
+    h3
+    {
+        font-size: 1.2em;
+    }
+
+    .index_body1
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        background-color: #fff;
+        text-align: left;
+        padding: 1%;
+    }
+
+    .index_header
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        height: 30px;
+    }
+
+    .index_header1
+    {
+        float: left;
+        width: 45%;
+        text-align: left;
+        background-color: #8ac5e8;
+    }
+
+        .index_header1 img
+        {
+            height: 30px;
+            width: 30px;
+        }
+
+    .index_header2
+    {
+        float: left;
+        width: 55%;
+        text-align: left;
+        font-size: 1.5em;
+        font-family: sans-serif;
+        font-weight: bold;
+        background-color: #8ac5e8;
+        padding: 0;
+    }
+
+    .index_intro
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        background-image: url(/Images/background1.png);
+        text-align: left;
+    }
+
+    .index_body2
+    {
+        clear: both;
+        float: left;
+        width: 98%;
+        padding: 1%;
+        background-color: #fff;
+    }
+
+    .index_body2child1
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .index_body2child2
+    {
+        display: none;
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px)
+{
+    html
+    {
+        background-color: #fff;
+        text-align: center;
+    }
+
+    #login_form
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    #register_form
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    #div_pass
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    body
+    {
+        width: 100%;
+        background-color: #fff;
+        color: #333;
+        font-size: .70em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        z-index: 650;
+    }
+
+    .hideinmobile
+    {
+        display: none;
+    }
+
+    .onlymobile
+    {
+        display: block;
+    }
+
+    #hide-in-mobile
+    {
+        display: none;
+    }
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        color: Black;
+        background-color: Green;
+        background: Green;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+        font-size: .95em;
+    }
+
+        a:link
+        {
+            color: #823434;
+            font-size: .95em;
+            text-decoration: none;
+        }
+
+        a:active
+        {
+            color: #944b4b;
+            font-size: .95em;
+        }
+
+        a:visited
+        {
+            color: #4d4848;
+            font-size: .95em;
+        }
+
+        a:link:hover
+        {
+            color: #944b4b;
+            text-decoration: underline;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+    .clear-fix:after
+    {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 2em;
+    }
+
+    h2
+    {
+        font-size: 1.75em;
+    }
+
+    h3
+    {
+        font-size: 1.2em;
+    }
+
+    .index_body1
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        background-color: #fff;
+        text-align: left;
+        padding: 1%;
+    }
+
+    .index_header
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        height: 30px;
+    }
+
+    .index_header1
+    {
+        float: left;
+        width: 45%;
+        text-align: left;
+        background-color: #8ac5e8;
+    }
+
+        .index_header1 img
+        {
+            height: 30px;
+            width: 30px;
+        }
+
+    .index_header2
+    {
+        float: left;
+        width: 55%;
+        text-align: left;
+        font-size: 1.5em;
+        font-family: sans-serif;
+        font-weight: bold;
+        background-color: #8ac5e8;
+        padding: 0;
+    }
+
+    .index_intro
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        background-image: url(/Images/background1.png);
+        text-align: left;
+    }
+
+    .index_body2
+    {
+        clear: both;
+        float: left;
+        width: 98%;
+        padding: 1%;
+        background-color: #fff;
+    }
+
+    .index_body2child1
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .index_body2child2
+    {
+        display: none;
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1098px)
+{
+    html
+    {
+        background-color: #fff;
+        text-align: center;
+    }
+
+    #login_form
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    #register_form
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    #div_pass
+    {
+        display: block;
+        background-color: #808080;
+        text-align: center;
+    }
+
+    .hideinmobile
+    {
+        display: none;
+    }
+
+    body
+    {
+        width: 100%;
+        background-color: #fff;
+        color: #333;
+        font-size: .70em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        z-index: 650;
+    }
+
+    .onlymobile
+    {
+        display: block;
+    }
+
+    #hide-in-mobile
+    {
+        display: none;
+    }
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        color: Black;
+        background-color: Green;
+        background: Green;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+        font-size: .95em;
+    }
+
+        a:link
+        {
+            color: #823434;
+            font-size: .95em;
+            text-decoration: none;
+        }
+
+        a:active
+        {
+            color: #944b4b;
+            font-size: .95em;
+        }
+
+        a:visited
+        {
+            color: #4d4848;
+            font-size: .95em;
+        }
+
+        a:link:hover
+        {
+            color: #944b4b;
+            text-decoration: underline;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+    .clear-fix:after
+    {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 2em;
+    }
+
+    h2
+    {
+        font-size: 1.75em;
+    }
+
+    h3
+    {
+        font-size: 1.2em;
+    }
+
+    .index_body1
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        background-color: #fff;
+        text-align: left;
+        padding: 1%;
+    }
+
+    .index_header
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        height: 30px;
+    }
+
+    .index_header1
+    {
+        clear: both;
+        float: left;
+        width: 45%;
+        text-align: left;
+        background-color: #8ac5e8;
+    }
+
+        .index_header1 img
+        {
+            height: 30px;
+            width: 30px;
+        }
+
+    .index_header2
+    {
+        float: left;
+        width: 55%;
+        text-align: left;
+        font-size: 1.5em;
+        font-family: sans-serif;
+        font-weight: bold;
+        background-color: #8ac5e8;
+        padding: 0;
+    }
+
+    .index_intro
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        background-image: url(/Images/background1.png);
+        text-align: left;
+    }
+
+    .index_body2
+    {
+        clear: both;
+        float: left;
+        width: 98%;
+        padding: 1%;
+        background-color: #fff;
+    }
+
+    .index_body2child1
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+
+    .index_body2child2
+    {
+        display: none;
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+}

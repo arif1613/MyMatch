@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="LocalSqlServer-Web.config Connection String" description="LocalSqlServer Connection String used in web.config by the application to access the database." defaultValue="Data Source=HAZEL.arvixe.com;Initial Catalog=mymatchDB;User ID=arif1613;Password=aa1613++;Integrated Security=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\bin\\Web\.config$" match="/configuration/connectionStrings/add[@name='LocalSqlServer']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LocalSqlServer']/@connectionString" />
+  </parameter>
+  <parameter name="mymatchDB-Web.config Connection String" description="mymatchDB Connection String used in web.config by the application to access the database." defaultValue="Data Source=HAZEL.arvixe.com;Initial Catalog=mymatchDB;Integrated Security=False;User ID=arif1613;password=aa1613++" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\bin\\Web\.config$" match="/configuration/connectionStrings/add[@name='mymatchDB']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='mymatchDB']/@connectionString" />
+  </parameter>
+  <parameter name="mymatch_profileDB-Web.config Connection String" description="mymatch_profileDB Connection String used in web.config by the application to access the database." defaultValue="Data Source=HAZEL.arvixe.com;Initial Catalog=myprofileDB;Integrated Security=False;User ID=arif1613;password=aa1613++" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\bin\\Web\.config$" match="/configuration/connectionStrings/add[@name='mymatch_profileDB']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='mymatch_profileDB']/@connectionString" />
+  </parameter>
+  <parameter name="mymatch_ChatDB-Web.config Connection String" description="mymatch_ChatDB Connection String used in web.config by the application to access the database." defaultValue="Data Source=HAZEL.arvixe.com;Initial Catalog=ChatDB;Integrated Security=False;User ID=arif1613;password=aa1613++" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\bin\\Web\.config$" match="/configuration/connectionStrings/add[@name='mymatch_ChatDB']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='mymatch_ChatDB']/@connectionString" />
+  </parameter>
+  <parameter name="othersDB-Web.config Connection String" description="othersDB Connection String used in web.config by the application to access the database." defaultValue="Data Source=HAZEL.arvixe.com;Initial Catalog=othersDB;Integrated Security=False;User ID=arif1613;password=aa1613++" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\bin\\Web\.config$" match="/configuration/connectionStrings/add[@name='othersDB']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='othersDB']/@connectionString" />
+  </parameter>
+  <parameter name="veificationDB-Web.config Connection String" description="veificationDB Connection String used in web.config by the application to access the database." defaultValue="Data Source=HAZEL.arvixe.com;Initial Catalog=verificationDB;Integrated Security=False;User ID=arif1613;password=aa1613++" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\bin\\Web\.config$" match="/configuration/connectionStrings/add[@name='veificationDB']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='veificationDB']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="DefaultConnection_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\asp\.net\\MyMatch\\MyMatch\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

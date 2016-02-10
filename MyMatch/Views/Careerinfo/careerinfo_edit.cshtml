@@ -1,0 +1,166 @@
+﻿@model MyMatch.Models.profile_careerinfo
+
+<div id="edit1" class="hideinmobile">
+    <div class="banner">
+        Career Informations
+    </div>
+    <div id="ajaxloader" style="display: none; text-align: center">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+
+
+    @using (Ajax.BeginForm("careerinfo_edit", "careerinfo", new AjaxOptions
+    {
+        UpdateTargetId = "edit1",
+        LoadingElementId = "ajaxloader",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.username)
+        <table class="editor-small-header">
+            <tr>
+                <th>Education Level:
+                </th>
+                <td>
+                    <input type="text" name="education" value="@Model.education" />
+                </td>
+                <td>
+                    @Html.DropDownList("education_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Last Educational Institution:
+                </th>
+                <td>
+                    <input type="text" name="education_institute" value="@Model.education_institute")" />
+                </td>
+                <td>
+                    @Html.DropDownList("education_institute_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Current Profession:
+                </th>
+                <td>
+                    <input type="text" name="profession" value="@Model.profession")" />
+                </td>
+                <td>
+                    @Html.DropDownList("profession_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Current Work Place:
+                </th>
+                <td>
+                    <input type="text" name="work_company" value="@Model.work_company" />
+                </td>
+                <td>
+                    @Html.DropDownList("work_company_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Current Salary/month(if applicable):
+                </th>
+                <td>
+                    <input type="text" name="salary" value="@Model.salary" />
+                </td>
+                <td>
+                    @Html.DropDownList("salary_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <th>
+                    <input type="submit" value="Update Info" />
+                </th>
+                <th>
+                    @Html.ActionLink("Cancel", "Index", "myprofile")
+                </th>
+            </tr>
+        </table>
+    }
+</div>
+
+<div id="edit3m" class="onlymobile">
+    <div class="banner">
+        Career Informations
+    </div>
+
+
+    @using (Ajax.BeginForm("careerinfo_edit", "careerinfo", new AjaxOptions
+    {
+        UpdateTargetId = "mobile_view",
+        LoadingElementId = "ajaxloaderm",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.username)
+        <table class="editor-small-header">
+            <tr>
+                <th>Education Level:
+                </th>
+                <td>
+                    <input type="text" name="education" value="@Model.education" />
+                </td>
+                <td>
+                    @Html.DropDownList("education_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Last Educational Institution:
+                </th>
+                <td>
+                    <input type="text" name="education_institute" value="@Model.education_institute")" />
+                </td>
+                <td>
+                    @Html.DropDownList("education_institute_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Current Profession:
+                </th>
+                <td>
+                    <input type="text" name="profession" value="@Model.profession")" />
+                </td>
+                <td>
+                    @Html.DropDownList("profession_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Current Work Place:
+                </th>
+                <td>
+                    <input type="text" name="work_company" value="@Model.work_company" />
+                </td>
+                <td>
+                    @Html.DropDownList("work_company_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Current Salary/month(if applicable):
+                </th>
+                <td>
+                    <input type="text" name="salary" value="@Model.salary" />
+                </td>
+                <td>
+                    @Html.DropDownList("salary_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <th>
+                    <input type="submit" value="Update Info" />
+                </th>
+                <th>
+                    @Html.ActionLink("Cancel", "Index", "myprofile")
+                </th>
+            </tr>
+        </table>
+    }
+</div>

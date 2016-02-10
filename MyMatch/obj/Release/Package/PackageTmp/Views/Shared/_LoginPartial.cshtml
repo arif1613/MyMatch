@@ -1,0 +1,65 @@
+﻿@model MyMatch.Models.LoginModel
+
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<div id="login_form">
+    <div class="banner" style="text-align: center">
+        <a style="color: maroon">Please Login Below</a>
+
+
+        @using (Html.BeginForm("Login", "Account"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <table class="editor-small-header">
+                <tr>
+                    <th>
+                        @Html.Label("User Name:")
+                    </th>
+                    <td>
+                        @Html.EditorFor(model => model.UserName)
+                    </td>
+                    <td class="validation">
+                        @Html.ValidationMessageFor(model => model.UserName)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.Label("Password:")
+                    </th>
+                    <td>
+                        @Html.EditorFor(model => model.Password)
+                    </td>
+                    <td class="validation">
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="hidden" name="RememberMe" value="true" />
+                    </td>
+                    <td>
+                        <input type="submit" class="banner" value="Login" />
+
+
+                    </td>
+            </table>
+        }
+    </div>
+
+    <div id="ajaxloader" style="display: none; text-align: center">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+    <div class="onlymobile">@Ajax.ActionLink("Register", "Register", "Account", new AjaxOptions
+                         {
+                             UpdateTargetId = "login_form",
+                             InsertionMode = InsertionMode.Replace,
+                             HttpMethod = "GET"
+                         }) if you don't have an account
+    </div>
+</div>
+

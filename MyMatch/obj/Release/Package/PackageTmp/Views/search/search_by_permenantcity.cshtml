@@ -1,0 +1,164 @@
+﻿@model IEnumerable<MyMatch.Models.profile_contactinfo>
+
+@{
+    ViewBag.Title = "search_by_permenantcity";
+}
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+
+@if (ViewBag.status == "Normal")
+{ 
+    @Html.Action("search_normal", "search")
+}
+<h3 class="banner"><a style="color: red">@ViewBag.total results found of</a>
+    @if (!string.IsNullOrEmpty(ViewBag.permenantcity))
+    {
+        <a>Permanent City:</a><a style="color: blue"> @ViewBag.permenantcity</a>
+    }
+    @if (!string.IsNullOrEmpty(ViewBag.presentcity))
+    {
+        <a>Present City:</a><a style="color: blue"> @ViewBag.presentcity</a>
+    }
+    @if (!string.IsNullOrEmpty(ViewBag.pro))
+    {
+        <a>Profession:</a><a style="color: blue"> @ViewBag.pro</a>
+    }
+</h3>
+<br />
+
+@foreach (var x in Model)
+{ 
+    @Html.Action("display_search_result", "search", new { user_name = x.username })
+}
+
+<br />
+@if (string.IsNullOrEmpty(ViewBag.presentcity) && string.IsNullOrEmpty(ViewBag.pro))
+{
+    for (int i = 1; i <= @ViewBag.totalpage; i++)
+    {
+        using (Html.BeginForm("search_by_permenantcity", "search", new { permenantcity = ViewBag.permenantcity }))
+        {
+            if (i == @ViewBag.pagenumber)
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left;color:red" />
+            }
+            else
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left" />
+            }
+        }
+    }
+}
+else if (string.IsNullOrEmpty(ViewBag.presentcity) && string.IsNullOrEmpty(ViewBag.pro))
+{
+    for (int i = 1; i <= @ViewBag.totalpage; i++)
+    {
+        using (Html.BeginForm("filter_by_presentcity", "search", new { permenantcity = ViewBag.permenantcity, present_city = ViewBag.presentcity }))
+        {
+            if (i == @ViewBag.pagenumber)
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left;color:red" />
+            }
+            else
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left" />
+            }
+        }
+    }
+}
+else
+{
+    for (int i = 1; i <= @ViewBag.totalpage; i++)
+    {
+        using (Html.BeginForm("filter_permanentcity_pro", "search", new { permenant_city = ViewBag.permenantcity, pro = ViewBag.pro }))
+        {
+            if (i == @ViewBag.pagenumber)
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left;color:red" />
+            }
+            else
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left" />
+            }
+        }
+    }
+
+}
+
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+
+        <a style="color: white">@Html.ActionLink("My Profile", "Index", "myprofile")</a>
+        <br />
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+}
+@section search{
+    @Html.Action("search_Index", "search")
+}
+@section message{
+    <div class="banner">Filter your search</div>
+    <script type="text/javascript">
+<!--   
+    $(document).ready(function () {
+
+        $("input.filter-presentcity").attr({
+            value: "Filter by present city..."
+        });
+        $("input.filter-presentcity").on("click", function () {
+            $(this).attr({
+                value: ""
+            });
+        });
+
+        $("input.filter-permenantcity_pro").attr({
+            value: "Filter by profession..."
+        });
+        $("input.filter-permenantcity_pro").on("click", function () {
+            $(this).attr({
+                value: ""
+            });
+        });
+    });
+    //-->
+    </script>
+    @using (Html.BeginForm("filter_by_presentcity", "search", new { permenantcity = ViewBag.permenantcity, page_number = 1 }))
+    {
+            
+        
+        <table class="editor-small">
+            <tr>
+                <td>
+                    <input type="text" name="present_city" class="filter-presentcity" data-autocomplete="@Url.Action("quicksearch_presentcity", new { permenant_city = ViewBag.permenantcity })"  style="color:#808080" />
+                </td>
+                <td>
+                    <input type="submit" value="Filter" />
+                </td>
+            </tr>
+        </table>
+    }
+    @using (Html.BeginForm("filter_permanentcity_pro", "search", new { permenant_city = ViewBag.permenantcity, page_number = 1 }))
+    {
+            
+        
+        <table class="editor-small">
+            <tr>
+                <td>
+                    <input type="text" name="pro" class="filter-permenantcity_pro" data-autocomplete="@Url.Action("quicksearch_permenantcity_profession_filter", new { permenant_city = ViewBag.permenantcity })"  style="color:#808080" />
+                </td>
+                <td>
+                    <input type="submit" value="Filter" />
+                </td>
+            </tr>
+        </table>
+    }
+
+}

@@ -1,0 +1,243 @@
+﻿@model MyMatch.Models.profile_contactinfo
+
+<div id="edit2" class="hideinmobile">
+    <div class="banner">
+        Contact Informations
+    </div>
+    <div id="ajaxloader" style="display: none; text-align: center">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+
+
+    @using (Ajax.BeginForm("contactinfo_edit", "contactinfo", new AjaxOptions
+    {
+        UpdateTargetId = "edit2",
+        LoadingElementId = "ajaxloader",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.username)
+        <table class="editor-small-header">
+            <tr>
+                <th>Present Address:
+                </th>
+                <td>
+                    <input type="text" name="present_address" value="@Model.present_address" />
+                </td>
+                <td>
+                    @Html.DropDownList("present_address_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Present City:
+                </th>
+                <td>
+                    <input type="text" name="present_address_city" value="@Model.present_address_city" />
+                </td>
+                <td>
+                    @Html.DropDownList("present_address_city_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Permenant Address:
+                </th>
+                <td>
+                    <input type="text" name="permenant_address" value="@Model.permenant_address")" />
+                </td>
+                <td>
+                    @Html.DropDownList("permenant_address_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Permenant State:
+                </th>
+                <td>
+                   @Html.DropDownListFor(m=>m.permenant_address_city, new SelectList(ViewBag.cities))
+                </td>
+                <td>
+                    @Html.DropDownList("permenant_address_city_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Contact Number:
+                </th>
+                <td>
+                    <input type="text" name="contactnumber" value="@Model.contactnumber" />
+                    <span style="float:left;font-size:.8em">ex. +9100000000000</span>
+                </td>
+                
+            </tr>
+
+            <tr>
+                <th>E-mail Address:
+                </th>
+                <td>
+                    <input type="text" name="email" value="@Model.email" />
+                </td>
+                
+            </tr>
+            <tr>
+                <th>Facebook Link:
+                </th>
+                <td>
+                    <input type="text" name="fblink" value="@Model.fblink")" />
+                </td>
+                <td>
+                    @Html.DropDownList("fblink_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Orkut Link:
+                </th>
+                <td>
+                    <input type="text" name="orkutlink" value="@Model.orkutlink" />
+                </td>
+                <td>
+                    @Html.DropDownList("orkutlink_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Twitter Link:
+                </th>
+                <td>
+                    <input type="text" name="twitterlink" value="@Model.twitterlink" />
+                </td>
+                <td>
+                    @Html.DropDownList("twitterlink_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <th>
+                    <input type="submit" value="Update Info" />
+                </th>
+                <th>
+                    @Html.ActionLink("Cancel", "Index", "myprofile")
+                </th>
+            </tr>
+        </table>
+    }
+</div>
+
+<div id="edit2m" class="onlymobile">
+    <div class="banner">
+        Contact Informations
+    </div>
+
+
+    @using (Ajax.BeginForm("contactinfo_edit", "contactinfo", new AjaxOptions
+    {
+        UpdateTargetId = "mobile_view",
+        LoadingElementId = "ajaxloaderm",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.username)
+        <table class="editor-small-header">
+            <tr>
+                <th>Present Address:
+                </th>
+                <td>
+                    <input type="text" name="present_address" value="@Model.present_address" />
+                </td>
+                <td>
+                    @Html.DropDownList("present_address_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Present City:
+                </th>
+                <td>
+                    <input type="text" name="present_address_city" value="@Model.present_address_city" />
+                </td>
+                <td>
+                    @Html.DropDownList("present_address_city_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Permenant Address:
+                </th>
+                <td>
+                    <input type="text" name="permenant_address" value="@Model.permenant_address")" />
+                </td>
+                <td>
+                    @Html.DropDownList("permenant_address_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Permenant State:
+                </th>
+                <td>
+                   @Html.DropDownListFor(m=>m.permenant_address_city, new SelectList(ViewBag.cities))
+                </td>
+                <td>
+                    @Html.DropDownList("permenant_address_city_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Contact Number:
+                </th>
+                <td>
+                    <input type="text" name="contactnumber" value="@Model.contactnumber" />
+                    <span style="float:left;font-size:.8em">ex. +9100000000000</span>
+                </td>
+                
+            </tr>
+
+            <tr>
+                <th>E-mail Address:
+                </th>
+                <td>
+                    <input type="text" name="email" value="@Model.email" />
+                </td>
+                
+            </tr>
+            <tr>
+                <th>Facebook Link:
+                </th>
+                <td>
+                    <input type="text" name="fblink" value="@Model.fblink")" />
+                </td>
+                <td>
+                    @Html.DropDownList("fblink_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Orkut Link:
+                </th>
+                <td>
+                    <input type="text" name="orkutlink" value="@Model.orkutlink" />
+                </td>
+                <td>
+                    @Html.DropDownList("orkutlink_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Twitter Link:
+                </th>
+                <td>
+                    <input type="text" name="twitterlink" value="@Model.twitterlink" />
+                </td>
+                <td>
+                    @Html.DropDownList("twitterlink_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <th>
+                    <input type="submit" value="Update Info" />
+                </th>
+                <th>
+                    @Html.ActionLink("Cancel", "Index", "myprofile")
+                </th>
+            </tr>
+        </table>
+    }
+</div>
+

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MyMatch.Models.ChatMessage>
+
+<table class="editor">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+
+                @string.Format("{0}({1}): {2}", item.from, item.dt.ToString("dd-MMM hh:mm"), item.msg);
+                             
+
+            </td>
+
+        </tr>
+    }
+        <tr>
+            <td>
+                @Html.ActionLink("Delete Conversation", "Delete_chat", new { id = Model.FirstOrDefault().ID })
+            </td>
+        </tr>
+    
+</table>

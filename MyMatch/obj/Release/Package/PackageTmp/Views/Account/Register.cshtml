@@ -1,0 +1,111 @@
+﻿@model MyMatch.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/myscript.js" type="text/javascript"></script>
+
+<div id="register_form">
+
+
+    <br />
+    <div class="banner">
+        <a style="color: maroon; font-size: 1em">Register<a style="color: red">(Free)</a> below if you don't have an account. Password should be 6 characters long.</a>
+    </div>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("All fields are required")
+        <table class="editor-small-header">
+            <tr>
+                <th style="color: Red">
+                    @Html.Label("User Name:")
+                </th>
+                <td>
+                    @Html.TextBoxFor(m => m.UserName)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </td>
+            </tr>
+            <tr>
+                <th style="color: Red">
+                    @Html.Label("Password:")
+                </th>
+                <td>
+                    @Html.PasswordFor(m => m.Password)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.Password)
+                </td>
+            </tr>
+            <tr>
+                <th style="color: Red">
+                    @Html.Label("Confirm Password:")
+                </th>
+                <td>
+                    @Html.PasswordFor(m => m.ConfirmPassword)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                </td>
+            </tr>
+            <tr>
+                <th style="color: Red">
+                    @Html.Label("E-mail:")
+                </th>
+                <td>
+                    @Html.TextBoxFor(m => m.email)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.email)
+                </td>
+            </tr>
+            <tr>
+                <th style="color: Red">
+                    @Html.Label("Date of Birth:")
+                </th>
+                <td>
+                    <input type="text" data-datepicker="true" name="DOB" id="dob" />
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(m => m.DOB)
+                </td>
+
+            </tr>
+            <tr>
+                <th class="editor-label" style="color: Red">
+                    <a style="color: Red">Profile Picture:</a>
+                </th>
+                <td>
+                    <input type="file" name="picture_file1" />
+                </td>
+            </tr>
+            <tr>
+                <th class="editor-label" style="color: Red">
+                    <a style="color: Red">Picture2:</a>
+                </th>
+                <td>
+                    <input type="file" name="picture_file2" />
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" class="banner" value="Register" />
+
+                </td>
+            </tr>
+        </table>
+    }
+
+</div>
+
+<div class="onlymobile">
+    <br />
+    @Html.ActionLink("Cancel", "Index", "Home")
+</div>

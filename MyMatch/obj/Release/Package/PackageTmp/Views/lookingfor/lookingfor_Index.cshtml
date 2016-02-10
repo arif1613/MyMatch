@@ -1,0 +1,40 @@
+﻿@model MyMatch.Models.lookingfor
+
+<div id="edit4" class="hideinmobile">
+<div class="banner">
+    I am looking for.....
+    @if (Model.username == User.Identity.Name)
+    { 
+        <span style="float: right">
+            @Ajax.ActionLink("Edit section", "lookingfor_edit", new { id = Model.ID }, new AjaxOptions
+       {
+           UpdateTargetId = "edit4",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </span>
+    }
+</div>
+    @Model.looking_for
+</div>
+
+<div id="edit4m" class="onlymobile">
+<div class="banner">
+    I am looking for.....
+    @if (Model.username == User.Identity.Name)
+    { 
+        <span style="float: right">
+            @Ajax.ActionLink("Edit", "lookingfor_edit", new { id = Model.ID }, new AjaxOptions
+       {
+           UpdateTargetId = "mobile_view",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </span>
+    }
+</div>
+        <div style="text-align:left">
+    @Model.looking_for
+            </div>
+</div>
+

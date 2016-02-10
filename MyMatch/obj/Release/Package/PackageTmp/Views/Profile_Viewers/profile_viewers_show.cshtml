@@ -1,0 +1,18 @@
+﻿@model MyMatch.Models.profile_viewers
+<a href="@Url.Action("user_profile_Index", "user_profile", new { user_name = Model.username })">
+
+    <table class="partial">
+        <tr>
+            <td>
+
+                <div class="td-div">
+                    <img src="~/Images/Pictures/@(Model.username)..1.png"  height="30" width="30"/>
+
+                    <a style="font-weight: bold; color: blue">@Model.username</a> last viewed your profile on @Model.visit_date.ToString("dd,MMM-yyyy")
+                    at @Model.visit_date.ToString("HH:mm")
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</a>

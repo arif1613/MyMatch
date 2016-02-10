@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "webmail_Index";
+}
+
+<h2>Send common message to all</h2>
+@using (Html.BeginForm("send_message", "webmail"))
+{ 
+    <div>
+        <a>Subject:</a>
+        <input type="text" name="subject" />
+    </div>
+    <div>
+        <a>Message:</a>
+        <textarea name="msg" cols="50" rows="7"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="send message" />
+    </div>
+}
+<br />
+<br />
+<h2>Send support mail</h2>
+@using (Html.BeginForm("send_mail", "webmail"))
+{ 
+    <div>
+        <a>Addresses(seperate by ','):</a>
+    <textarea name="addresses" cols="50" rows="2"></textarea>
+        </div>
+    <div>
+        <a>Subject:</a>
+        <input type="text" name="subject" />
+    </div>
+    <div>
+        <a>Message:</a>
+        <textarea name="msg" cols="50" rows="7"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="send message" />
+    </div>
+}
+
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+
+        <a style="color: white">@Html.ActionLink("My Profile", "Index", "myprofile")</a>
+
+        <br />
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+}
+

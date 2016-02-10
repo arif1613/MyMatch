@@ -1,0 +1,21 @@
+﻿@model MyMatch.Models.profile_logininfo
+
+<p>
+    Are you sure to delete profile for @Model.username ?
+</p>
+@using (Html.BeginForm("login_info_Delete", "profile_logininfos"))
+{
+    @Html.HiddenFor(v=>v.ID)
+    @Html.HiddenFor(v=>v.password)
+    @Html.HiddenFor(v=>v.update_date)
+    @Html.HiddenFor(v=>v.user_status)
+    @Html.HiddenFor(v=>v.username)
+    @Html.HiddenFor(v=>v.emailaddress)
+
+    <input type="submit" value="Delete" />
+
+}
+<div>
+    @Html.ActionLink("Cancel", "login_info_Index")
+</div>
+<br />

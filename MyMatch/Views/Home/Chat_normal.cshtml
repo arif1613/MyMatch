@@ -1,0 +1,20 @@
+﻿<p style="width: 100%; background-color: #cfc5c5; color: red;text-align:left">
+    As Normal user you can only chat with people who are interested to you. Please be our Premium member
+    and you can also chat with the people you are interested to. 
+
+</p>
+<div style="width: 100%; clear: both; float: left; background-color: #cfc5c5; padding-top: 2%">
+    <div style="width: 50%; text-align: center; float: left">
+        @using (Html.BeginForm("payment1", "Home"))
+        { 
+            <input type="submit" class="payment" value="$10 (1 month)" />
+        }
+    </div>
+    <div style="width: 50%; text-align: center; float: left">
+        @using (Html.BeginForm("payment2", "Home"))
+        { 
+            <input type="submit" class="payment" value="$25 (3 months)" />
+        }
+    </div>
+</div>
+

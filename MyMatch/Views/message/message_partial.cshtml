@@ -1,0 +1,9 @@
+﻿@model IEnumerable<MyMatch.Models.message>
+
+<p class="banner">
+    @Html.ActionLink("My Messages", "message_inbox", "message")<a style="color:red">(@ViewBag.total)</a>
+</p>
+@foreach (var item in Model) {
+    @Html.Action("message_show", "message", new { id=item.ID})
+}
+

@@ -1,0 +1,168 @@
+﻿@model IEnumerable<MyMatch.Models.profile_basicinfo>
+
+@{
+    ViewBag.Title = "search_by_religion";
+}
+
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+
+<h3 class="banner"><a style="color: red">@ViewBag.total results found of</a>
+    @if (!string.IsNullOrEmpty(ViewBag.religion))
+    {
+        <a>Religion:</a><a style="color: blue"> @ViewBag.religion</a>
+    }
+    @if (!string.IsNullOrEmpty(ViewBag.age))
+    {
+        <a>Age: </a><a style="color: blue">@ViewBag.age</a>
+    }
+    @if (!string.IsNullOrEmpty(ViewBag.m_status))
+    {
+        <a>Marital Status: </a><a style="color: blue">@ViewBag.m_status</a>
+    }
+    .....</h3>
+<br />
+@if (ViewBag.status == "Normal")
+{ 
+    @Html.Action("search_normal", "search")
+}
+
+@foreach (var x in Model)
+{ 
+    @Html.Action("display_search_result", "search", new { user_name = x.username })
+}
+
+<br />
+@if (string.IsNullOrEmpty(ViewBag.age) && string.IsNullOrEmpty(ViewBag.m_status))
+{
+    for (int i = 1; i <= @ViewBag.totalpage; i++)
+    {
+        using (Html.BeginForm("search_by_religion", "search", new { religion = ViewBag.religion }))
+        {
+            if (i == @ViewBag.pagenumber)
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left;color:red" />
+            }
+            else
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left" />
+            }
+        }
+    }
+}
+else if (!string.IsNullOrEmpty(ViewBag.m_status))
+{
+    for (int i = 1; i <= @ViewBag.totalpage; i++)
+    {
+        using (Html.BeginForm("filter_religion_m_status", "search", new { religion = ViewBag.religion, m_status = ViewBag.m_status }))
+        {
+            if (i == @ViewBag.pagenumber)
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left;color:red" />
+            }
+            else
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left" />
+            }
+        }
+    }
+
+}
+else
+{
+    for (int i = 1; i <= @ViewBag.totalpage; i++)
+    {
+        using (Html.BeginForm("filter_religion_age", "search", new { religion = ViewBag.religion, age = ViewBag.age }))
+        {
+            if (i == @ViewBag.pagenumber)
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left;color:red" />
+            }
+            else
+            {
+    <input type="submit" value="@i" name="page_number" style="display: inline; float:left" />
+            }
+        }
+    }
+
+}
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+
+        <a style="color: white">@Html.ActionLink("My Profile", "Index", "myprofile")</a>
+        <br />
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+}
+@section search{
+    @Html.Action("search_Index", "search")
+}
+
+
+@section message{
+    <div class="banner">Filter your search</div>
+    <script type="text/javascript">
+<!--   
+    $(document).ready(function () {
+        
+        $("input.filter-age").attr({
+            value: "Filter by age..."
+        });
+        $("input.filter-age").on("click", function () {
+            $(this).attr({
+                value: ""
+            });
+        });
+
+
+        
+        $("input.filter-m_status").attr({
+            value: "Filter by Marital status..."
+        });
+        $("input.filter-m_status").on("click", function () {
+            $(this).attr({
+                value: ""
+            });
+        });
+    });
+    //-->
+    </script>
+
+    @{
+        using (Html.BeginForm("filter_religion_age", "search", new { religion = ViewBag.religion, page_number = 1 }))
+        {
+        <table class="editor-small">
+            <tr>
+                <td>
+                    <input type="text" name="age" class="filter-age" data-autocomplete="@Url.Action("quicksearch_religion_age", new { religion = ViewBag.religion })"  style="color:#808080" />
+                </td>
+                <td>
+                    <input type="submit" value="Filter" />
+                </td>
+            </tr>
+        </table>
+        }
+        using (Html.BeginForm("filter_religion_m_status", "search", new { religion = ViewBag.religion, page_number = 1 }))
+        {
+        <table class="editor-small">
+            <tr>
+                <td>
+                    <input type="text" name="m_status" class="filter-m_status" data-autocomplete="@Url.Action("quicksearch_religion_m_status", new { religion = ViewBag.religion })"  style="color:#808080" />
+                </td>
+                <td>
+                    <input type="submit" value="Filter" />
+                </td>
+            </tr>
+        </table>
+        }
+    }
+
+}

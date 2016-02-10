@@ -1,0 +1,105 @@
+﻿@model MyMatch.Models.others.others
+
+<div id="edit_others">
+    <div class="banner">
+        Other informations
+    </div>
+    <div id="ajaxloader" style="display: none; text-align: center">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+
+
+    @using (Ajax.BeginForm("edit_others", "others", new AjaxOptions
+    {
+        UpdateTargetId = "edit_others",
+        LoadingElementId = "ajaxloader",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.username)
+
+        <table class="table-others">
+        <tr>
+            <th>Father's Name:
+            </th>
+            <td>
+                <div>
+                    <input type="text" name="Father_name" value="@Model.Father_name" />
+                    
+                </div>
+            </td>
+            <th>Smoking Habbit:
+            </th>
+            <td>
+                <div>
+                    @Html.DropDownListFor(m=>m.smoking_habbit,new SelectList(ViewBag.smoking_habbit))
+
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Mother's Name:
+            </th>
+            <td>
+                <div>
+                    <input type="text" name="Mother_name" value="@Model.Mother_name" />
+                </div>
+            </td>
+            <th>Drinking Habbit:
+            </th>
+            <td>
+                <div>
+                    @Html.DropDownListFor(m=>m.drinking_habbit,new SelectList(ViewBag.drinking_habbit))
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Eating Habbit:
+            </th>
+            <td>
+                <div>
+                    @Html.DropDownListFor(m=>m.eating_habbit,new SelectList(ViewBag.eating_habbit))
+                </div>
+            </td>
+            <th>Body Type:
+            </th>
+            <td>
+                <div>
+                    @Html.DropDownListFor(m=>m.body_type,new SelectList(ViewBag.body_type))
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Complexion:
+            </th>
+            <td>
+                <div>
+                    @Html.DropDownListFor(m=>m.complexion,new SelectList(ViewBag.complexion))
+                </div>
+            </td>
+            <th>Physical Status:
+            </th>
+            <td>
+                <div>
+                    @Html.DropDownListFor(m=>m.physical_status,new SelectList(ViewBag.physical_status))
+                </div>
+            </td>
+        </tr>
+            <tr>
+                <th></th>
+                <th>
+                    <input type="submit" value="Update Info" />
+                </th>
+                <th>
+                    @Html.ActionLink("Cancel", "Index", "myprofile")
+                </th>
+            </tr>
+
+    </table>
+    }
+</div>
+
+

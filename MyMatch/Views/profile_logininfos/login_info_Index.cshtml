@@ -1,0 +1,98 @@
+﻿@model IEnumerable<MyMatch.Views.Contactinfo.profile_logininfo>
+
+@{
+    ViewBag.Title = "login_info_Index";
+}
+
+@using (Ajax.BeginForm("Serach_result", "profile_logininfos", new AjaxOptions
+{
+
+    UpdateTargetId = "edit_section",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST"
+
+}))
+{ 
+
+    <input type="text" name="u_name" data-autocomplete="@Url.Action("quicksearch_logininfo", "profile_logininfos")" />
+    <input type="submit" value="Search Username" />
+}
+<br />
+<div id="edit_section">
+</div>
+<a>total profiles: @ViewBag.total</a>
+<table class="editor-small-header">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailaddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.update_date)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emailaddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.update_date)
+            </td>
+            <td>
+                @Ajax.ActionLink("[....Edit....]", "login_info_Edit", new { id = item.ID }, new AjaxOptions
+           {
+               UpdateTargetId = "edit_section",
+               InsertionMode = InsertionMode.Replace,
+               HttpMethod = "GET"
+           }) |
+                     @Ajax.ActionLink("[....Delete....]", "login_info_Delete", new { id = item.ID }, new AjaxOptions
+           {
+               UpdateTargetId = "edit_section",
+               InsertionMode = InsertionMode.Replace,
+               HttpMethod = "GET"
+           })
+            </td>
+        </tr>
+    }
+</table>
+
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+
+        <a style="color: white">@Html.ActionLink("My Profile", "Index", "myprofile")</a>
+
+        <br />
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+
+}

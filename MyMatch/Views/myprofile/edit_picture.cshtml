@@ -1,0 +1,45 @@
+﻿@model MyMatch.Views.Contactinfo.profile_logininfo
+
+<h3 style="text-align: center">@User.Identity.Name</h3>
+
+@using (Html.BeginForm("edit_picture1", "myprofile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table class="editor-small">
+        <tr>
+            <th style="text-align: center">
+                <img src="~/Images/Pictures/@(User.Identity.Name)..1.png" height="50" width="50" />
+            </th>
+            <td>
+                <input type="file" name="edit_picture1" style="font-size: .8em" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update" style="font-size: .8em" />
+            </td>
+        </tr>
+    </table>
+}
+@using (Html.BeginForm("edit_picture2", "myprofile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table class="editor-small">
+        <tr>
+            <th style="text-align: center">
+                <img src="~/Images/Pictures/@(User.Identity.Name)..2.png" height="50" width="50"/>
+            </th>
+            <td>
+                <input type="file" name="edit_picture2" style="font-size: .8em" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update" style="font-size: .8em" />
+            </td>
+            <td></td>
+        </tr>
+    </table>
+}
+<br />
+<div style="text-align: center" class="banner">
+    @Html.ActionLink("Cancel", "Index", "myprofile")
+</div>

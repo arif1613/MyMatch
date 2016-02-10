@@ -1,0 +1,686 @@
+﻿
+table.editor-chat
+{
+    width: 100%;
+    clear: both;
+    float: left;
+    background-color: gray;
+}
+
+table.table-chat th
+{
+    width: 60%;
+    float: left;
+}
+
+    table.table-chat th input
+    {
+        width: 100%;
+        font-size: 1em;
+    }
+
+table.table-chat td
+{
+    font-size: 1em;
+    text-align: left;
+    width: 30%;
+    padding-right: 10%;
+}
+
+.payment
+{
+    display: block;
+    color: #d82727;
+    background-color: #d3dce0;
+    border: 1px solid #787878;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 1%;
+    width: 98%;
+}
+
+.user
+{
+    display: block;
+    color: green;
+    background-color: #d3dce0;
+    border: 1px solid #787878;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 1%;
+    width: 98%;
+}
+
+.user1
+{
+    display: none;
+    color: green;
+    background-color: #d3dce0;
+    border: 1px solid #787878;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 1%;
+    width: 98%;
+    opacity: .2;
+}
+
+.notify
+{
+    display: block;
+    color: maroon;
+    background-color: #d3dce0;
+    border: 1px solid #787878;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 1%;
+    width: 98%;
+}
+
+.members
+{
+    height: 15em;
+    width: inherit;
+    padding: 1%;
+    text-align: left;
+    overflow-y: scroll;
+    color: gray;
+    list-style: none;
+    background-color: #d6f14b;
+}
+
+.pc_ul
+{
+    height: 12em;
+    position: relative;
+    text-align: left;
+    overflow-y: auto;
+    background-color: #c3bbbb;
+    list-style: none;
+}
+
+    .pc_ul li:last-child:focus
+    {
+        padding-bottom: 1em;
+    }
+
+
+    .pc_ul li.listing
+    {
+        font-size: 1em;
+        color: red;
+    }
+
+        .pc_ul li.listing:last-child
+        {
+            padding-bottom: 1em;
+        }
+
+    .pc_ul li.listing1
+    {
+        font-size: 1em;
+        color: blue;
+    }
+
+        .pc_ul li.listing1:last-child
+        {
+            padding-bottom: 1em;
+        }
+
+
+
+@media handheld
+{
+    .members
+    {
+        height: 20em;
+        width:98%;
+        padding: 1%;
+        text-align: left;
+        overflow: scroll;
+        color: gray;
+        list-style: none;
+        font-size: 1em;
+        background-color: #d6f14b;
+    }
+
+    .h
+    {
+        display: none;
+    }
+
+    .v
+    {
+        display: block;
+    }
+
+    .payment
+    {
+        display: block;
+        color: #d82727;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        padding: 1%;
+        width: 98%;
+    }
+
+    .user
+    {
+        display: block;
+        color: green;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .user1
+    {
+        display: block;
+        color: green;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: .1em;
+        width: 100%;
+        opacity: .2;
+    }
+
+    .notify
+    {
+        display: block;
+        color: maroon;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
+
+
+    .pc_ul
+{
+    height: 12em;
+    position: relative;
+    text-align: left;
+    overflow-y: auto;
+    background-color: #c3bbbb;
+    list-style: none;
+}
+
+    .pc_ul li:last-child
+    {
+        padding-bottom: 1em;
+    }
+
+
+    .pc_ul li.listing
+    {
+        font-size: 1em;
+        color: red;
+    }
+
+        .pc_ul li.listing:last-child
+        {
+            padding-bottom: 1em;
+        }
+
+    .pc_ul li.listing1
+    {
+        font-size: 1em;
+        color: blue;
+    }
+
+        .pc_ul li.listing1:last-child
+        {
+            padding-bottom: 1em;
+        }
+}
+
+@media only screen and (max-width: 500px)
+{
+    .members
+    {
+        height: 20em;
+        width:98%;
+        padding: 1%;
+        text-align: left;
+        overflow: scroll;
+        color: gray;
+        list-style: none;
+        font-size: 1em;
+        background-color: #d6f14b;
+    }
+
+    .h
+    {
+        display: none;
+    }
+
+    .v
+    {
+        display: block;
+    }
+
+    .payment
+    {
+        display: block;
+        color: #d82727;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        padding: 1%;
+        width: 98%;
+    }
+
+    .user
+    {
+        display: block;
+        color: green;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .user1
+    {
+        display: block;
+        color: green;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: .1em;
+        width: 100%;
+        opacity: .2;
+    }
+
+    .notify
+    {
+        display: block;
+        color: maroon;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
+
+
+    .pc_ul
+{
+    height: 12em;
+    position: relative;
+    text-align: left;
+    overflow-y: auto;
+    background-color: #c3bbbb;
+    list-style: none;
+}
+
+    .pc_ul li:last-child
+    {
+        padding-bottom: 1em;
+    }
+
+
+    .pc_ul li.listing
+    {
+        font-size: 1em;
+        color: red;
+    }
+
+        .pc_ul li.listing:last-child
+        {
+            padding-bottom: 1em;
+        }
+
+    .pc_ul li.listing1
+    {
+        font-size: 1em;
+        color: blue;
+    }
+
+        .pc_ul li.listing1:last-child
+        {
+            padding-bottom: 1em;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+    .members
+    {
+        height: 20em;
+width:98%;
+        padding: 1%;
+        text-align: left;
+        overflow: scroll;
+        color: gray;
+        list-style: none;
+        font-size: 1em;
+        background-color: #d6f14b;
+    }
+
+    .h
+    {
+        display: none;
+    }
+
+    .v
+    {
+        display: block;
+    }
+
+    .payment
+    {
+        display: block;
+        color: #d82727;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        padding: 1%;
+        width: 98%;
+    }
+
+    .user
+    {
+        display: block;
+        color: green;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .user1
+    {
+        display: block;
+        color: green;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: .1em;
+        width: 100%;
+        opacity: .2;
+    }
+
+    .notify
+    {
+        display: block;
+        color: maroon;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
+
+
+    .pc_ul
+{
+    height: 12em;
+    position: relative;
+    text-align: left;
+    overflow-y: auto;
+    background-color: #c3bbbb;
+    list-style: none;
+}
+
+    .pc_ul li:last-child
+    {
+        padding-bottom: 1em;
+    }
+
+
+    .pc_ul li.listing
+    {
+        font-size: 1em;
+        color: red;
+    }
+
+        .pc_ul li.listing:last-child
+        {
+            padding-bottom: 1em;
+        }
+
+    .pc_ul li.listing1
+    {
+        font-size: 1em;
+        color: blue;
+    }
+
+        .pc_ul li.listing1:last-child
+        {
+            padding-bottom: 1em;
+        }
+}
+
+@media only screen and (max-width: 480px)
+{
+    .members
+    {
+        height: 20em;
+width:98%;
+        padding: 1%;
+        text-align: left;
+        overflow: scroll;
+        color: gray;
+        list-style: none;
+        font-size: 1em;
+        background-color: #d6f14b;
+    }
+
+    .h
+    {
+        display: none;
+    }
+
+    .v
+    {
+        display: block;
+    }
+
+    .payment
+    {
+        display: block;
+        color: #d82727;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        padding: 1%;
+        width: 98%;
+    }
+
+    .user
+    {
+        display: block;
+        color: green;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .user1
+    {
+        display: block;
+        color: green;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: .1em;
+        width: 100%;
+        opacity: .2;
+    }
+
+    .notify
+    {
+        display: block;
+        color: maroon;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .pc_ul
+{
+    height: 12em;
+    position: relative;
+    text-align: left;
+    overflow-y: auto;
+    background-color: #c3bbbb;
+    list-style: none;
+}
+
+    .pc_ul li:last-child
+    {
+        padding-bottom: 1em;
+    }
+
+
+    .pc_ul li.listing
+    {
+        font-size: 1em;
+        color: red;
+    }
+
+        .pc_ul li.listing:last-child
+        {
+            padding-bottom: 1em;
+        }
+
+    .pc_ul li.listing1
+    {
+        font-size: 1em;
+        color: blue;
+    }
+
+        .pc_ul li.listing1:last-child
+        {
+            padding-bottom: 1em;
+        }
+}
+
+@media only screen and (max-width: 1098px)
+{
+    .members
+    {
+        height: 20em;
+width:98%;
+        padding: 1%;
+        text-align: left;
+        overflow: scroll;
+        color: gray;
+        list-style: none;
+        font-size: 1em;
+        background-color: #d6f14b;
+    }
+
+    .h
+    {
+        display: none;
+    }
+
+    .v
+    {
+        display: block;
+    }
+
+    .payment
+    {
+        display: block;
+        color: #d82727;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        padding: 1%;
+        width: 98%;
+    }
+
+    .user
+    {
+        display: block;
+        color: green;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .user1
+    {
+        display: block;
+        color: green;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: .1em;
+        width: 100%;
+        opacity: .2;
+    }
+
+    .notify
+    {
+        display: block;
+        color: maroon;
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
+
+
+    .pc_ul
+{
+    height: 12em;
+    position: relative;
+    text-align: left;
+    overflow-y: auto;
+    background-color: #c3bbbb;
+    list-style: none;
+}
+
+    .pc_ul li:last-child
+    {
+        padding-bottom: 1em;
+    }
+
+
+    .pc_ul li.listing
+    {
+        font-size: 1em;
+        color: red;
+    }
+
+        .pc_ul li.listing:last-child
+        {
+            padding-bottom: 1em;
+        }
+
+    .pc_ul li.listing1
+    {
+        font-size: 1em;
+        color: blue;
+    }
+
+        .pc_ul li.listing1:last-child
+        {
+            padding-bottom: 1em;
+        }
+}

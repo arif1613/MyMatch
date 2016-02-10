@@ -1,0 +1,104 @@
+﻿@model MyMatch.Models.profile_contactinfo
+
+<script>
+<!--   
+    $(document).ready(function () {
+        
+        $("input.username").attr({
+            value: "Search by Username..."
+        });
+        $("input.username").on("click", function () {
+            $(this).attr({
+                value: ""
+            });
+        });
+
+        
+        $("input.presentcity").attr({
+            value: "Search present city..."
+        });
+        $("input.presentcity").on("click", function () {
+            $(this).attr({
+                value: ""
+            });
+        });
+        $("input.permenantcity").attr({
+            value: "Search permanent State..."
+        });
+        
+        $("input.permenantcity").on("click", function () {
+            $(this).attr({
+                value: ""
+            });
+        });
+        $("input.religion").attr({
+            value: "Search by religion..."
+        });
+        
+        $("input.religion").on("click", function () {
+            $(this).attr({
+                value: ""
+            });
+        });
+    });
+    //-->
+</script>
+
+
+@using (Html.BeginForm("user_profile_Index", "user_profile"))
+{
+    <table class="editor-small">
+        <tr>
+
+            <td>
+                <input type="text" name="user_name" class="username" data-autocomplete="@Url.Action("quicksearch_username", "search")" style="color:#808080" />
+            </td>
+            <td>
+                <input type="submit" value="Search" />
+            </td>
+        </tr>
+    </table>
+}
+
+@using (Html.BeginForm("search_by_presentcity", "search", new { page_number = 1 }))
+{ 
+    <table class="editor-small">
+        <tr>
+            <td>
+                <input type="text" name="presentcity" class="presentcity" data-autocomplete="@Url.Action("quicksearch_presentcity", "search")" style="color:#808080" />
+            </td>
+            <td>
+                <input type="submit" value="Search" />
+            </td>
+        </tr>
+    </table>
+}
+<div id="hide-in-mobile">
+@using (Html.BeginForm("search_by_permenantcity", "search", new { page_number = 1 }))
+{
+    <table class="editor-small">
+        <tr>
+            <td>
+                <input type="text" name="permenantcity" class="permenantcity" data-autocomplete="@Url.Action("quicksearch_permenantcity", "search")" style="color:#808080" />
+            </td>
+            <td>
+                <input type="submit" value="Search" />
+            </td>
+        </tr>
+    </table>
+}
+
+@using (Html.BeginForm("search_by_religion", "search", new { page_number = 1 }))
+{
+    <table class="editor-small">
+        <tr>
+            <td>
+                <input type="text" name="religion" class="religion" data-autocomplete="@Url.Action("quicksearch_religion", "search")" style="color:#808080" />
+            </td>
+            <td>
+                <input type="submit" value="Search" />
+            </td>
+        </tr>
+    </table>
+}
+    </div>

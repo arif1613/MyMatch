@@ -1,0 +1,18 @@
+﻿@model MyMatch.Models.profile_basicinfo
+
+<a href="@Url.Action("user_profile_Index", "user_profile", new { user_name = Model.username })">
+    <table class="table-search">
+
+        <tr>
+            <th>
+                <img src="~/Images/Pictures/@(Model.username)..1.png" height="50" width="50" />
+            </th>
+            <td>Username:@Model.username
+                <br />
+                Name: @Model.Name
+                <br />
+                Age: @Model.age
+            </td>
+        </tr>
+    </table>
+</a>

@@ -1,0 +1,209 @@
+﻿@model MyMatch.Models.profile_logininfo
+
+@{
+    ViewBag.Title = "user_profile_Index";
+}
+
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+        @if (User.Identity.Name == Model.username)
+        {
+            <a style="color: white">Hello, @User.Identity.Name</a>
+        }
+        else
+        {
+            <a style="color: white">@Html.ActionLink("My Profile", "Index", "myprofile")</a>
+        }
+        <br />
+    
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+}
+
+@section menu1{
+    @if (User.Identity.Name != Model.username)
+    { 
+        <div class="banner-colored">
+            <a href="@Url.Action("photo_galary", "myprofile", new { user = Model.username })">View Pictures</a>
+        </div>
+    }
+}
+@section menu2{
+    @if (User.Identity.Name != Model.username)
+    { 
+        <div class="banner-colored">
+            @if (@ViewBag.interest == "interested")
+            {
+                    
+                @Html.ActionLink("[remove interest]", "remove_interest", new { u_name = Model.username }) 
+            }
+            else
+            {
+                @Html.ActionLink("[Show interest]", "Show_interest", new { u_name = Model.username }) 
+            }
+            @if (ViewBag.saved == "not saved")
+            {            
+                @Html.ActionLink("[Save profile]", "save_profile", new { u_name = Model.username })
+            }
+            else
+            {            
+                @Html.ActionLink("[Delete profile]", "delete_saving", new { u_name = Model.username })
+            }
+        </div>
+        
+    }
+}
+@section picture{
+    @Html.Action("my_picture", "myprofile", new { user_name = @Model.username })
+}
+@section basicinfo{
+    <div class="hideinmobile">
+        @Html.Action("basicinfo_Index", "basicinfo", new { user_name = @Model.username })
+    </div>
+
+    <div class="onlymobile" style="width: 100%; float: left; clear: both; background-color: #c2e3f2; font-size: 1.2em; font-weight:bolder; padding-top: .5em; padding-bottom: .5em; text-align:left; margin-bottom: .2em">
+        @Ajax.ActionLink("Basic Informations >>", "basicinfo_Index", "basicinfo", new { user_name = @Model.username }, new AjaxOptions
+   {
+       UpdateTargetId = "mobile_view",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+        
+    </div>
+
+    <div class="onlymobile" style="width: 100%; float: left; clear: both; background-color: #c2e3f2; font-size: 1.2em; font-weight:bolder; padding-top: .5em; padding-bottom: .5em; text-align:left; margin-bottom: .2em">
+                @Ajax.ActionLink("Contact Informations >>", "contactinfo_Index", "contactinfo", new { user_name = @Model.username }, new AjaxOptions
+   {
+       UpdateTargetId = "mobile_view",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+        
+    </div>
+
+        <div class="onlymobile" style="width: 100%; float: left; clear: both; background-color: #c2e3f2; font-size: 1.2em; font-weight:bolder; padding-top: .5em; padding-bottom: .5em; text-align:left; margin-bottom: .2em">
+                @Ajax.ActionLink("Career Informations >>", "careerinfo_Index", "careerinfo", new { user_name = @Model.username }, new AjaxOptions
+   {
+       UpdateTargetId = "mobile_view",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+        
+    </div>
+
+            <div class="onlymobile" style="width: 100%; float: left; clear: both; background-color: #c2e3f2; font-size: 1.2em; font-weight:bolder; padding-top: .5em; padding-bottom: .5em; text-align:left; margin-bottom: .2em">
+                @Ajax.ActionLink("About Me >>","aboutme_Index", "lookingfor", new { user_name = @Model.username }, new AjaxOptions
+   {
+       UpdateTargetId = "mobile_view",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+        
+    </div>
+
+    
+            <div class="onlymobile" style="width: 100%; float: left; clear: both; background-color: #c2e3f2; font-size: 1.2em; font-weight:bolder; padding-top: .5em; padding-bottom: .5em; text-align:left; margin-bottom: .2em">
+                @Ajax.ActionLink("Looking For >>","lookingfor_Index", "lookingfor", new { user_name = @Model.username }, new AjaxOptions
+   {
+       UpdateTargetId = "mobile_view",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+        
+    </div>
+
+    
+    
+    <div id="ajaxloaderm" style="display: none; text-align: center">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+    <div id="mobile_view" style="clear: both; float: left; width: 100%">
+    </div>
+}
+@section careerinfo{
+    @Html.Action("careerinfo_Index", "careerinfo", new { user_name = @Model.username })
+}
+@section contactinfo{
+    @Html.Action("contactinfo_Index", "contactinfo", new { user_name = @Model.username })
+}
+@section aboutme{
+    @Html.Action("aboutme_Index", "lookingfor", new { user_name = @Model.username })
+}
+@section lookingfor{
+    @Html.Action("lookingfor_Index", "lookingfor", new { user_name = @Model.username })
+}
+@section others{
+    @Html.Action("others_Index", "others", new { username = @Model.username })
+}
+
+@section search{
+    <div class="hideinmobile">
+        <div class="banner">
+            <a>Search Profiles</a>
+        </div>
+        @Html.Action("search_Index", "search")
+    </div>
+}
+@section message{
+    <div class="banner">
+        Send <a style="color: maroon">@Model.username</a> a Message
+    </div>
+    <script type="text/javascript">
+        <!--
+    $(function () {
+        $('input[data-checking]').attr('disabled', 'disabled');
+        $('textarea').keyup(function () {
+            if ($(this).val() != '') {
+                $('input[data-checking]').removeAttr('disabled');
+            } else {
+                $('input[data-checking]').attr('disabled', 'disabled');
+            }
+
+        });
+        $('.ajaxloader').hide();
+        $(".send").click(function () {
+            $('.ajaxloader').show();
+        });
+    });
+    //-->
+    </script>
+    <div class="ajaxloader">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+    <div id="message">
+        @using (Html.BeginForm("messagesending", "message", new { msg_receiver = @Model.username }))
+        {
+            <div>
+                <textarea name="msg_body" id="textarea"></textarea>
+            </div>
+            <div style="float: right; clear: both">
+                <input type="submit" value="Send message" class="send" data-checking="true" />
+            </div>
+        }
+    </div>
+    <br />
+    <br />
+    <div style="width: 100%; text-align: center; float: left" class="hideinmobile">
+        <input type="button" value="Print @Model.username's profile" onclick="window.print()" />
+    </div>
+}
+@section profileview{
+    @Html.Action("profile_viewer_partial", "Profile_Viewers")
+    
+}

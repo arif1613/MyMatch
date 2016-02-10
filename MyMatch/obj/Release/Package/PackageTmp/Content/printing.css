@@ -1,0 +1,382 @@
+﻿@media print
+{
+    .page
+    {
+        width: 100%;
+    }
+
+    #hide-in-mobile
+    {
+        display: block;
+    }
+
+    .hideinmobile
+    {
+        display: block;
+    }
+
+    .onlymobile
+    {
+        display: none;
+    }
+
+    body
+    {
+        background-color: #fff;
+        color: #333;
+        font-size: 6pt;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+        text-align: center;
+        z-index: 800;
+        width: 100%;
+    }
+
+
+    /*datepicker*/
+    .d a.ui-state-default
+    {
+        display: none;
+    }
+
+    .ui-datepicker-week-end, .ui-datepicker-week-end a.ui-state-default
+    {
+        color: red;
+    }
+
+    a
+    {
+        color: #333;
+    }
+
+        a:link
+        {
+            display: none;
+        }
+
+        a:active
+        {
+            display: none;
+        }
+
+        a:visited
+        {
+            display: none;
+        }
+
+        a:link:hover
+        {
+            display: none;
+        }
+
+    header, footer, hgroup,
+    nav, section
+    {
+        display: block;
+    }
+
+
+
+    h1, h2, h3
+    {
+        color: #000;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1
+    {
+        font-size: 2em;
+    }
+
+    h2
+    {
+        font-size: 1.75em;
+    }
+
+    h3
+    {
+        font-size: 1.2em;
+    }
+
+    /* main layout
+----------------------------------------------------------*/
+    .header
+    {
+        display: none;
+    }
+
+
+
+    .header1
+    {
+        float: left;
+        clear: both;
+        width: 70%;
+        padding-top: .5%;
+        color: white;
+        text-align: center;
+        font: 18px bold sans-serif;
+    }
+
+
+    .header2
+    {
+        float: left;
+        width: 30%;
+        text-align: center;
+        font-size: 1em;
+        font-family: sans-serif;
+    }
+
+
+    #newdiv
+    {
+        float: left;
+        clear: both;
+        position: absolute;
+        width: 98%;
+        padding: 1%;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        z-index: 700;
+        background-color: #bbbbbb;
+    }
+
+
+    .menu
+    {
+        display: none;
+    }
+
+    .menu1
+    {
+        clear: both;
+        float: left;
+        text-align: left;
+        width: 50%;
+    }
+
+    .menu2
+    {
+        float: left;
+        text-align: left;
+        width: 50%;
+    }
+
+
+
+    .intro
+    {
+        display: none;
+    }
+
+    .others
+    {
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        text-align: left;
+    }
+
+    .body1
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+        z-index: 800;
+        background-image: url(/Images/indianbibah.png);
+    }
+
+    .body1child1
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+        background-image: url(/Images/indianbibah.png);
+    }
+
+    .body1child1-left
+    {
+        float: left;
+        padding: 1%;
+        width: 98%;
+        background-color: #fff;
+        background-image: url(/Images/indianbibah.png);
+    }
+
+    .body1child1-right
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        padding: 1%;
+        background-image: url(/Images/indianbibah.png);
+    }
+
+    .body1child2
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child2-left
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        padding: 1%;
+        background-image: url(/Images/indianbibah.png);
+    }
+
+    .body1child2-right
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        padding: 1%;
+        background-image: url(/Images/indianbibah.png);
+    }
+
+    .body1child3
+    {
+        float: left;
+        clear: both;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    .body1child3-left
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        padding: 1%;
+        background-image: url(/Images/indianbibah.png);
+    }
+
+    .body1child3-right
+    {
+        float: left;
+        clear: both;
+        width: 98%;
+        padding: 1%;
+        background-image: url(/Images/indianbibah.png);
+    }
+
+    .body2
+    {
+        display: none;
+    }
+
+
+
+    .body2child2
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        display: none;
+    }
+
+    .body2child3
+    {
+        clear: both;
+        float: left;
+        width: 100%;
+        display: none;
+    }
+
+        .body2child3 textarea
+        {
+            clear: both;
+            float: none;
+            width: 80%;
+            padding: 1%;
+            display: none;
+        }
+
+    .body2child4
+    {
+        display: none;
+    }
+
+    .body2child5
+    {
+        display: none;
+    }
+
+    .body3
+    {
+        display: none;
+    }
+
+    footer
+    {
+        clear: both;
+        background-color: #e2e2e2;
+        font-size: 12px;
+    }
+
+    table.myprofile-table
+    {
+        text-align: left;
+        width: 98%;
+        background-color: White;
+    }
+
+        table.myprofile-table tr
+        {
+            background-color: #fff;
+            font-size: 6pt;
+            text-align: left;
+            width: 100%;
+        }
+
+        table.myprofile-table th
+        {
+            background-color: #fff;
+            font-size: 6pt;
+            text-align: left;
+            width: 45%;
+        }
+
+        table.myprofile-table td
+        {
+            background-color: #fff;
+            font-size: 6pt;
+            text-align: left;
+            width: 55%;
+        }
+
+    .banner
+    {
+        width: 98%;
+        padding: 1%;
+        background-color: #a5ced0;
+        font: Bold 12px Tahoma;
+        color: #fff;
+    }
+
+    #edit
+    {
+        width: 100%;
+    }
+
+    .td-div
+    {
+        overflow: visible;
+    }
+
+    table.myprofile-table td input[text]
+    {
+        background-color: #fff;
+        font-size: .95em;
+        text-align: left;
+        width: 80%;
+    }
+}

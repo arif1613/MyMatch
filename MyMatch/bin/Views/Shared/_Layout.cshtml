@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Indian Matchmaking Site - @ViewBag.Title</title>
+    <link href="~/Content/images/icon.jpg" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" media="handheld" />
+    <link href="../../Content/banners.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/banners.css" rel="stylesheet" type="text/css" media="handheld" />
+    <link href="../../Content/Style_tables.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/Style_tables.css" rel="stylesheet" type="text/css" media="handheld" />
+    <link href="../../Content/ChatRoom.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/ChatRoom.css" rel="stylesheet" type="text/css" media="handheld" />
+    <link href="../../Content/printing.css" rel="stylesheet" type="text/css" media="Print" />
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-49383221-1', 'indianbibah.com');
+        ga('send', 'pageview');
+
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body>
+    <div itemscope itemtype="http://schema.org/LocalBusiness" class="page">
+        <div class="header">
+            <a href="~/myprofile/Index">
+                <div class="header1">
+                    IndianBibah
+                </div>
+            </a>
+            <div class="header2">
+                @RenderSection("login", false)
+            </div>
+        </div>
+        <div class="onlymobile">
+            <br />
+            <br />
+        </div>
+        <div class="menu">
+            <div class="menu1">
+                @RenderSection("menu1", false)
+            </div>
+            <div class="menu2">
+
+                @RenderSection("menu2", false)
+            </div>
+        </div>
+        <div class="body1">
+            <div class="intro">
+                @RenderBody()
+            </div>
+            <div class="body1child1">
+                <div class="body1child1-left">
+                    @RenderSection("picture", false)
+                </div>
+                <div class="body1child1-right">
+                    @RenderSection("basicinfo", false)
+                </div>
+            </div>
+
+            <div class="body1child2">
+                <div class="body1child2-left">
+                    @RenderSection("careerinfo", false)
+                </div>
+                <div class="body1child2-right">
+                    @RenderSection("contactinfo", false)
+                </div>
+            </div>
+            <div class="body1child3">
+                <div class="body1child3-left">
+                    @RenderSection("aboutme", false)
+                </div>
+                <div class="body1child3-right">
+                    @RenderSection("lookingfor", false)
+                </div>
+            </div>
+            <div class="others" id="hide-in-mobile">
+                @RenderSection("others", false)
+            </div>
+
+        </div>
+        <div class="body2">
+
+            <div class="body2child2">
+                @RenderSection("search", false)
+                <br />
+            </div>
+
+            <div class="body2child3">
+                @RenderSection("profileview", false)
+                <br />
+            </div>
+
+            <div class="body2child4">
+                @RenderSection("message", false)
+            </div>
+
+
+        </div>
+        <div class="body3">
+            <div class="banner">Chat</div>
+            @Html.Action("Chat", "Home")
+            <br />
+        </div>
+        <ul class="onlymobile">
+            <li>
+                <a href="@Url.Action("message_inbox", "message")" style="float:left">[My Messages]
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("profile_viewer_Index", "Profile_Viewers")" style="float:right">[Profile Viewers]
+                </a>
+
+            </li>
+        </ul>
+        <br />
+        <br />
+        @if (User.IsInRole("aa1613"))
+        {
+            <footer>
+                @Html.ActionLink("All Pofiles => ", "login_info_Index", "profile_logininfos")
+                @Html.ActionLink("  RefreshDB  =>", "refresh_DBIndex", "RefreshDB")
+            </footer>
+        }
+        else
+        {
+            <footer>
+                <span style="float: none">Contact: info@@indianbibah.com.                
+                2014-2017<img src="~/Content/images/copyright.png" height="10" width="10" />AA Softwares
+                </span>
+            </footer>
+        }
+
+        @Scripts.Render("~/bundles/jqueryui")
+        @Styles.Render("~/Content/css", "~/Content/themes/base/css")
+        @Scripts.Render("~/bundles/modernizr", "~/bundles/jqueryval")
+    </div>
+</body>
+</html>

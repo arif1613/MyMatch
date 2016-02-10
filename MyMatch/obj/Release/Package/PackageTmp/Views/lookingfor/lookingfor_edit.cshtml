@@ -1,0 +1,70 @@
+﻿@model MyMatch.Models.lookingfor
+
+<div id="edit4" class="hideinmobile">
+    <div class="banner">
+        I am looking for.....
+    </div>
+    <div id="ajaxloader" style="display: none; text-align: center">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+
+
+    @using (Ajax.BeginForm("lookingfor_edit", "lookingfor", new AjaxOptions
+    {
+        UpdateTargetId = "edit4",
+        LoadingElementId = "ajaxloader",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.username)
+        @Html.HiddenFor(m => m.aboutme)
+        <div>
+
+            <textarea name="looking_for" cols="35" rows="3">@Model.looking_for</textarea>
+
+        </div>
+        <span style="float:left">
+            <a>Visibility option:</a>@Html.DropDownList("lookingfor_option", new SelectList(new List<string> { "visible", "hidden" }))
+        </span>
+        <span style="float:right">
+            <input type="submit" value="Update" />@Html.ActionLink("Cancel", "Index", "myprofile")
+        </span>
+    }
+</div>
+
+
+<div id="edit4m" class="onlymobile">
+    <div class="banner">
+        I am looking for.....
+    </div>
+
+
+    @using (Ajax.BeginForm("lookingfor_edit", "lookingfor", new AjaxOptions
+    {
+        UpdateTargetId = "mobile_view",
+        LoadingElementId = "ajaxloaderm",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.username)
+        @Html.HiddenFor(m => m.aboutme)
+        <div>
+
+            <textarea name="looking_for" cols="35" rows="3">@Model.looking_for</textarea>
+
+        </div>
+        <span style="float:left">
+            <a>Visibility option:</a>@Html.DropDownList("lookingfor_option", new SelectList(new List<string> { "visible", "hidden" }))
+        </span>
+        <span style="float:right">
+            <input type="submit" value="Update" />@Html.ActionLink("Cancel", "Index", "myprofile")
+        </span>
+    }
+</div>
+

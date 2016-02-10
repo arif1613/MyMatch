@@ -1,0 +1,312 @@
+﻿@model MyMatch.Models.profile_contactinfo
+
+<div id="edit2" class="hideinmobile">
+    <div class="banner">
+        Contact Informations
+    @if (Model.username == User.Identity.Name)
+    { 
+        <span style="float: right">
+            @Ajax.ActionLink("Edit section", "contactinfo_edit", new { id = Model.ID }, new AjaxOptions
+       {
+           UpdateTargetId = "edit2",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </span>
+    }
+    </div>
+
+    <table class="editor-small-header">
+        <tr>
+            <th>Present Address:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.present_address
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Present City:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.present_address_city
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Permenant Address:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.permenant_address
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Permenant State:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.permenant_address_city
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Contact Number:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.contactnumber
+                </div>
+            </td>
+            <td>
+                @if (ViewBag.mobile_ver == "verified")
+                { 
+                    <img src="~/Content/images/ver_right.jpg" style="height: 1.1em; width: 1.1em" />
+                }
+                else
+                {
+                    <img src="~/Content/images/ver_wrong.jpg" style="height: 1.1em; width: 1.1em" />
+                }
+
+            </td>
+        </tr>
+        <tr>
+            <th>E-mail Address:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.email
+                </div>
+            </td>
+            <td>
+                @if (ViewBag.email_ver == "verified")
+                { 
+                    <img src="~/Content/images/ver_right.jpg" style="height: 1em; width: 1em" />
+                }
+                else
+                {
+                    <img src="~/Content/images/ver_wrong.jpg" style="height: 1em; width: 1em" />
+                }
+
+            </td>
+        </tr>
+        <tr>
+            <th>Facebook Link:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.fblink
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Orkut Link:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.orkutlink
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Twitter Link:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.twitterlink
+                </div>
+            </td>
+        </tr>
+    </table>
+    @if (Model.username == User.Identity.Name)
+    {
+        if (ViewBag.email_ver == "unverified")
+        { 
+        <div id="ver_email" style="clear: both; float: left; width: 98%; padding: 1%; text-align: center; color: red; font-size: 1.3em">
+            @Ajax.ActionLink("Verify E-mail Address", "email_ver_Index", "verification", new AjaxOptions
+       {
+           UpdateTargetId = "ver_email",
+           LoadingElementId = "ajax1",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </div>
+        <div id="ajax1" style="text-align: center; clear: both; float: left; display: none; width: 100%">
+            <img src="~/Content/ajax-loader.gif" />
+        </div>
+        }
+        <br />
+        if (ViewBag.mobile_ver == "unverified")
+        { 
+        <div id="ver_mobile" style="clear: both; float: left; width: 98%; padding: 1%; text-align: center; color: red; font-size: 1.3em">
+            @Ajax.ActionLink("Verify mobile number", "mobile_ver_Index", "verification", new AjaxOptions
+       {
+           UpdateTargetId = "ver_mobile",
+           LoadingElementId = "ajax2",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </div>
+        <div id="ajax2" style="text-align: center; clear: both; float: left; display: none; width: 100%">
+            <img src="~/Content/ajax-loader.gif" />
+        </div>
+        }
+
+    }
+</div>
+
+<div id="edit2m" class="onlymobile">
+    <div class="banner">
+        Contact Informations
+    @if (Model.username == User.Identity.Name)
+    { 
+        <span style="float: right">
+            @Ajax.ActionLink("Edit", "contactinfo_edit", new { id = Model.ID }, new AjaxOptions
+       {
+           UpdateTargetId = "mobile_view",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </span>
+    }
+    </div>
+
+    <table class="editor-small-header">
+        <tr>
+            <th>Present Address:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.present_address
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Present City:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.present_address_city
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Permenant Address:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.permenant_address
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Permenant State:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.permenant_address_city
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Contact Number:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.contactnumber
+                </div>
+            </td>
+            <td>
+                @if (ViewBag.mobile_ver == "verified")
+                { 
+                    <img src="~/Content/images/ver_right.jpg" style="height: 1.1em; width: 1.1em" />
+                }
+                else
+                {
+                    <img src="~/Content/images/ver_wrong.jpg" style="height: 1.1em; width: 1.1em" />
+                }
+
+            </td>
+        </tr>
+        <tr>
+            <th>E-mail Address:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.email
+                </div>
+            </td>
+            <td>
+                @if (ViewBag.email_ver == "verified")
+                { 
+                    <img src="~/Content/images/ver_right.jpg" style="height: 1em; width: 1em" />
+                }
+                else
+                {
+                    <img src="~/Content/images/ver_wrong.jpg" style="height: 1em; width: 1em" />
+                }
+
+            </td>
+        </tr>
+        <tr>
+            <th>Facebook Link:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.fblink
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Orkut Link:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.orkutlink
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Twitter Link:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.twitterlink
+                </div>
+            </td>
+        </tr>
+    </table>
+    @if (Model.username == User.Identity.Name)
+    {
+        if (ViewBag.email_ver == "unverified")
+        { 
+        <div id="ver_emailm" style="clear: both; float: left; width: 98%; padding: 1%; text-align: center; color: red; font-size: 1.3em">
+            @Ajax.ActionLink("Verify E-mail Address", "email_ver_Index", "verification", new AjaxOptions
+       {
+           UpdateTargetId = "ver_emailm",
+           LoadingElementId = "ajaxloaderm",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </div>
+        }
+        <br />
+        if (ViewBag.mobile_ver == "unverified")
+        { 
+        <div id="ver_mobilem" style="clear: both; float: left; width: 98%; padding: 1%; text-align: center; color: red; font-size: 1.3em">
+            @Ajax.ActionLink("Verify mobile number", "mobile_ver_Index", "verification", new AjaxOptions
+       {
+           UpdateTargetId = "ver_mobilem",
+           LoadingElementId = "ajaxloaderm",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </div>
+        }
+
+    }
+</div>
+

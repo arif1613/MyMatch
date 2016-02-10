@@ -1,0 +1,55 @@
+﻿@model MyMatch.Models.profile_logininfo
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+
+<div id="logininfo_edit">
+    <table class="editor">
+        <tr>
+            <th>Username
+            </th>
+            <th>Password
+            </th>
+            <th>Email address
+            </th>
+            <th>User Status
+            </th>
+            <th>Update Date
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Model.username
+            </td>
+            <td>
+                @Model.password
+            </td>
+            <td>
+                @Model.emailaddress
+            </td>
+            <td>
+                @Model.user_status
+            </td>
+            <td>
+                @Model.update_date
+            </td>
+            <td>
+                @Ajax.ActionLink("Edit", "login_info_Edit", "profile_logininfos", new { id = Model.ID }, new AjaxOptions
+           {
+               UpdateTargetId = "logininfo_edit",
+               InsertionMode = InsertionMode.Replace,
+               HttpMethod = "GET"
+           }) |
+                     @Ajax.ActionLink("Delete", "login_info_Delete", "profile_logininfos", new { id = Model.ID }, new AjaxOptions
+           {
+               UpdateTargetId = "logininfo_edit",
+               InsertionMode = InsertionMode.Replace,
+               HttpMethod = "GET"
+           })
+
+            </td>
+        </tr>
+    </table>
+    <br />
+</div>
+

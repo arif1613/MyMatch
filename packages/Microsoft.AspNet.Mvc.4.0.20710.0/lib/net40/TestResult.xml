@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\asp.net\MyMatch\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll" total="0" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-04-21" time="01:19:45">
+  <environment nunit-version="2.6.0.12051" clr-version="2.0.50727.4963" os-version="Microsoft Windows NT 6.1.7600.0" platform="Win32NT" cwd="C:\asp.net\MyMatch\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40" machine-name="ARIF-PC" user="arif" user-domain="arif-PC" />
+  <culture-info current-culture="sv-SE" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\asp.net\MyMatch\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll" executed="True" result="Inconclusive" success="False" time="0.053" asserts="0" />
+</test-results>

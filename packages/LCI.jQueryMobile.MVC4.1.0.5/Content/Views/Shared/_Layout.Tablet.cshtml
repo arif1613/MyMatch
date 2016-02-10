@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/images/apple-touch-icon-72x72.png" />   <!-- iPad Low-Res -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/images/apple-touch-icon-144x144.png" /> <!-- iPad Hi-Res -->
+    <link rel="apple-touch-icon-precomposed" sizes="android-only" href="~/Content/images/apple-touch-icon-57x57.png" />   <!-- Android -->
+    <link rel="apple-touch-icon-precomposed" href="~/Content/images/apple-touch-icon-57x57.png" />   <!-- default -->
+
+    <link rel="apple-touch-startup-image" href="~/Content/images/startup_image_768x1004.png"  media="(device-width: 768px) and (orientation: portrait)" /> <!-- iPad Low-Res -->
+    <link rel="apple-touch-startup-image" href="~/Content/images/startup_image_1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" /> <!-- iPad Retina -->
+    <link rel="apple-touch-startup-image" href="~/Content/images/startup_image_1024x748.png"  media="(device-width: 768px) and (orientation: landscape)" /> <!-- iPad Low-Res Landscape -->
+    <link rel="apple-touch-startup-image" href="~/Content/images/startup_image_2048x1496.png" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" /> <!-- iPad Retina Landscape -->
+    <link rel="apple-touch-startup-image" href="~/Content/images/startup_image_768x1004.png" /> <!-- (iPad default) -->
+
+    <link rel="shortcut icon" href="@Url.Content("~/Content/images/favicon.ico")" type="image/x-icon" />
+    <link rel="icon" href="@Url.Content("~/Content/images/favicon.ico")" type="image/x-icon" />
+
+    @Styles.Render("~/Content/MobileCSS")
+    @Scripts.Render("~/bundles/MobileJS")
+
+  </head>
+  <body>
+    <div data-role="page" data-theme="b">
+      <div data-role="header" data-position="fixed" data-theme="b">
+ @{
+        bool ShowBackButton = false;
+        bool ShowHomeButton = false;
+        if (ViewBag.ShowBackButton != null && ViewBag.ShowBackButton == true) { ShowBackButton = true; }
+        if (ViewBag.ShowHomeButton != null && ViewBag.ShowHomeButton == true) { ShowHomeButton = true; }
+        if (ShowBackButton || ShowHomeButton)
+        {
+          <h1>@ViewBag.Title</h1>
+          if (ShowBackButton)
+          {
+            <a data-rel="back" data-role="button" data-transition="slide" data-direction="reverse" data-icon="back">Back</a>
+          }
+          if (ShowHomeButton)
+          {
+            <a href="@Url.Action("Index", "Home")" data-role="button" data-transition="slide" data-direction="reverse" data-icon="home">Home</a>
+          }
+        }
+        else
+        {
+          <h1>@ViewBag.Title</h1>
+        }
+      }
+        <a href="http://your.blog.com/" data-role="button" data-transition="slide" data-direction="reverse" data-icon="forward" class="ui-btn-right">Blog</a>
+      </div>
+      <div data-role="content" data-theme="d">
+        @RenderSection("featured", false)
+        @RenderBody()
+        <div class="float-left">
+  @Html.Partial("_MobileFooter")
+        </div>
+      </div>
+      <div data-role="footer" data-position="fixed" data-theme="b">
+        @Html.Partial("_MobileNavBar")
+      </div>
+    </div>
+  </bodv>
+</html>

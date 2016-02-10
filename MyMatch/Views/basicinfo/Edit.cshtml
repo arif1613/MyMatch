@@ -1,0 +1,228 @@
+﻿@model MyMatch.Models.profile_basicinfo
+
+<script type="text/javascript">
+    $(":input[data-datepicker]").datepicker({
+        dateFormat: 'd-M,yy',
+        monthNamesShort: ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'],
+        changeMonth: true,
+        changeYear: true,
+        firstDay: 1 // The first day of the week, Sun = 0, Mon = 1, ...
+    });
+
+</script>
+
+<div id="edit" class="hideinmobile">
+    <div class="banner">
+        Basic Informations
+    </div>
+    <div id="ajaxloader" style="display: none; text-align: center">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+
+
+    @using (Ajax.BeginForm("Edit", "basicinfo", new AjaxOptions
+    {
+        UpdateTargetId = "edit",
+        LoadingElementId = "ajaxloader",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.username)
+        @Html.HiddenFor(m => m.age)
+        @Html.HiddenFor(m => m.DOB)
+        <table class="editor-small-header">
+            <tr>
+                <th>Name:
+                </th>
+                <td>
+                    <input type="text" name="Name" value="@Model.Name" />
+                </td>
+                <td>
+                    @Html.DropDownList("name_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Gender:
+                </th>
+                <td>
+                    @Html.DropDownListFor(m => m.sex, new SelectList(new List<string> { "Male", "Female" }))
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Languages(seperate by ','):
+                </th>
+                <td>
+                    <input type="text" name="languages" value="@Model.languages" />
+                </td>
+                <td>
+                    @Html.DropDownList("languages_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Marital status:
+                </th>
+                <td>
+                    @Html.DropDownListFor(m => m.marital_status, new SelectList(new List<string> { "Single", "Married", "Divorced", "Widowed","Complicated" }))
+
+                </td>
+                
+            </tr>
+            <tr>
+                <th>Height(cm.):
+                </th>
+                <td>
+                    <input type="text" name="height" value="@Model.height" />
+                </td>
+                <td>
+                    @Html.DropDownList("height_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Weight(kg.):
+                </th>
+                <td>
+                    <input type="text" name="weight" value="@Model.weight" />
+                </td>
+                <td>
+                    @Html.DropDownList("weight_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Religion:
+                </th>
+                <td>
+                    @Html.DropDownListFor(m => m.Religion, new SelectList(new List<string> { "Hindu", "Muslim", "Christian", "Buddhist","Jain","Jewish","Sikh","Parsi", "Atheist","Others" }))
+                </td>
+                
+            </tr>
+            <tr>
+                <th>Cast:
+                </th>
+                <td>
+                    <input type="text" name="religion_cast" value="@Model.religion_cast" />
+                </td>
+                
+            </tr>
+            <tr>
+                <th></th>
+                <th>
+                    <input type="submit" value="Update Info" />
+                </th>
+                <th>
+                    @Html.ActionLink("Cancel", "Index", "myprofile")
+                </th>
+            </tr>
+        </table>
+    }
+</div>
+
+
+<div id="editm" class="onlymobile">
+    <div class="banner">
+        Basic Informations
+    </div>
+
+
+    @using (Ajax.BeginForm("Edit", "basicinfo", new AjaxOptions
+    {
+        UpdateTargetId = "mobile_view",
+        LoadingElementId = "ajaxloaderm",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST"
+    }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.username)
+        @Html.HiddenFor(m => m.age)
+        @Html.HiddenFor(m => m.DOB)
+        <table class="editor-small-header">
+            <tr>
+                <th>Name:
+                </th>
+                <td>
+                    <input type="text" name="Name" value="@Model.Name" />
+                </td>
+                <td>
+                    @Html.DropDownList("name_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Gender:
+                </th>
+                <td>
+                    @Html.DropDownListFor(m => m.sex, new SelectList(new List<string> { "Male", "Female" }))
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Languages(seperate by ','):
+                </th>
+                <td>
+                    <input type="text" name="languages" value="@Model.languages" />
+                </td>
+                <td>
+                    @Html.DropDownList("languages_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Marital status:
+                </th>
+                <td>
+                    @Html.DropDownListFor(m => m.marital_status, new SelectList(new List<string> { "Single", "Married", "Divorced", "Widowed","Complicated" }))
+
+                </td>
+                
+            </tr>
+            <tr>
+                <th>Height(cm.):
+                </th>
+                <td>
+                    <input type="text" name="height" value="@Model.height" />
+                </td>
+                <td>
+                    @Html.DropDownList("height_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Weight(kg.):
+                </th>
+                <td>
+                    <input type="text" name="weight" value="@Model.weight" />
+                </td>
+                <td>
+                    @Html.DropDownList("weight_option", new SelectList(new List<string> { "visible", "hidden" }))
+                </td>
+            </tr>
+            <tr>
+                <th>Religion:
+                </th>
+                <td>
+                    @Html.DropDownListFor(m => m.Religion, new SelectList(new List<string> { "Hindu", "Muslim", "Christian", "Buddhist","Jain","Jewish","Sikh","Parsi", "Atheist","Others" }))
+                </td>
+                
+            </tr>
+            <tr>
+                <th>Cast:
+                </th>
+                <td>
+                    <input type="text" name="religion_cast" value="@Model.religion_cast" />
+                </td>
+                
+            </tr>
+            <tr>
+                <th></th>
+                <th>
+                    <input type="submit" value="Update Info" />
+                </th>
+                <th>
+                    @Html.ActionLink("Cancel", "Index", "myprofile")
+                </th>
+            </tr>
+        </table>
+    }
+</div>

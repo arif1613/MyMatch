@@ -1,0 +1,384 @@
+﻿.banner
+{
+    width: 98%;
+    padding-left: 1%;
+    padding-right: 1%;
+    background-color: #a5ced0;
+    font: Bold 12px Tahoma;
+    color: maroon;
+    overflow-x:auto;
+}
+
+.banner-colored
+{
+    width: 98%;
+    padding: 1%;
+    background-color: #f1e9e9;
+    font: Bold 14px Tahoma;
+    color: #900;
+}
+
+.banner-small
+{
+    width: 99%;
+    padding: .5%;
+    background-color: #d5c3c3;
+    font: 12px Tahoma;
+    color: #111;
+    overflow: hidden;
+}
+
+.banner-message
+{
+    width: 96%;
+    padding: 1%;
+    background-color: #fff;
+    font: 10px Tahoma;
+    color: #635e5e;
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: 1%;
+    box-shadow: 2px 2px 2px #635e5e;
+}
+
+    .banner-message p
+    {
+        width: 100%;
+        background-color: #fff;
+        font: 10px Tahoma;
+        color: #000;
+        overflow: hidden;
+        text-align: left;
+    }
+
+
+#textarea
+{
+    width: 90%;
+}
+
+@media handheld
+{
+    .banner
+    {
+        width: 100%;
+        padding: 0;
+        background-color: #a5ced0;
+        font-size: 1.2em;
+        color: maroon;
+    }
+
+        .banner a
+        {
+            color:maroon;
+            font-size: .8em;
+        }
+
+    .banner-colored
+    {
+        width: 100%;
+        background-color: #f1e9e9;
+        font-size: .8em;
+        color: #900;
+    }
+
+    .banner-small
+    {
+        width: 100%;
+        background-color: #d5c3c3;
+        font-size: .7em;
+        color: #111;
+    }
+
+    .banner-message
+    {
+        width: 100%;
+        background-color: #fff;
+        font-size: .8em;
+        color: #635e5e;
+        text-align: left;
+        margin-bottom: 1%;
+        box-shadow: 2px 2px 2px #635e5e;
+    }
+
+        .banner-message p
+        {
+            width: 100%;
+            background-color: #fff;
+            font-size: .6em;
+            color: #000;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .banner-message img
+        {
+            height: 10px;
+            width: 10px;
+        }
+
+    #textarea
+    {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px)
+{
+    .banner
+    {
+        width: 100%;
+        padding: 0;
+        background-color: #a5ced0;
+        font-size: 1.2em;
+        color: maroon;
+    }
+
+        .banner a:link
+        {
+            font-size: .8em;
+        }
+
+    .banner-colored
+    {
+        width: 100%;
+        background-color: #f1e9e9;
+        font-size: .8em;
+        color: #900;
+    }
+
+    .banner-small
+    {
+        width: 100%;
+        background-color: #d5c3c3;
+        font-size: .7em;
+        color: #111;
+    }
+
+    .banner-message
+    {
+        width: 100%;
+        background-color: #fff;
+        font-size: .8em;
+        color: #635e5e;
+        text-align: left;
+        margin-bottom: 1%;
+        box-shadow: 2px 2px 2px #635e5e;
+    }
+
+        .banner-message p
+        {
+            width: 100%;
+            background-color: #fff;
+            font-size: .6em;
+            color: #000;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .banner-message img
+        {
+            height: 10px;
+            width: 10px;
+        }
+
+    #textarea
+    {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+    .banner
+    {
+        width: 100%;
+        padding: 0;
+        background-color: #a5ced0;
+        font-size: 1.2em;
+        color: maroon;
+    }
+
+        .banner a:link
+        {
+            font-size: .8em;
+        }
+
+    .banner-colored
+    {
+        width: 100%;
+        background-color: #f1e9e9;
+        font-size: .8em;
+        color: #900;
+    }
+
+    .banner-small
+    {
+        width: 100%;
+        background-color: #d5c3c3;
+        font-size: .7em;
+        color: #111;
+    }
+
+    .banner-message
+    {
+        width: 100%;
+        background-color: #fff;
+        font-size: .8em;
+        color: #635e5e;
+        text-align: left;
+        margin-bottom: 1%;
+        box-shadow: 2px 2px 2px #635e5e;
+    }
+
+        .banner-message p
+        {
+            width: 100%;
+            background-color: #fff;
+            font-size: .6em;
+            color: #000;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .banner-message img
+        {
+            height: 10px;
+            width: 10px;
+        }
+
+    #textarea
+    {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px)
+{
+    .banner
+    {
+        width: 100%;
+        padding: 0;
+        background-color: #a5ced0;
+        font-size: 1.2em;
+        color: maroon;
+    }
+
+        .banner a:link
+        {
+            font-size: .8em;
+        }
+
+    .banner-colored
+    {
+        width: 100%;
+        background-color: #f1e9e9;
+        font-size: .8em;
+        color: #900;
+    }
+
+    .banner-small
+    {
+        width: 100%;
+        background-color: #d5c3c3;
+        font-size: .7em;
+        color: #111;
+    }
+
+    .banner-message
+    {
+        width: 100%;
+        background-color: #fff;
+        font-size: .8em;
+        color: #635e5e;
+        text-align: left;
+        margin-bottom: 1%;
+        box-shadow: 2px 2px 2px #635e5e;
+    }
+
+        .banner-message p
+        {
+            width: 100%;
+            background-color: #fff;
+            font-size: .6em;
+            color: #000;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .banner-message img
+        {
+            height: 10px;
+            width: 10px;
+        }
+
+    #textarea
+    {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1098px)
+{
+    .banner
+    {
+        width: 100%;
+        padding: 0;
+        background-color: #a5ced0;
+        font-size: 1.2em;
+        color: maroon;
+    }
+
+        .banner a:link
+        {
+            font-size: .8em;
+        }
+
+    .banner-colored
+    {
+        width: 100%;
+        background-color: #f1e9e9;
+        font-size: .8em;
+        color: #900;
+    }
+
+    .banner-small
+    {
+        width: 100%;
+        background-color: #d5c3c3;
+        font-size: .7em;
+        color: #111;
+    }
+
+    .banner-message
+    {
+        width: 100%;
+        background-color: #fff;
+        font-size: .8em;
+        color: #635e5e;
+        text-align: left;
+        margin-bottom: 1%;
+        box-shadow: 2px 2px 2px #635e5e;
+    }
+
+        .banner-message p
+        {
+            width: 100%;
+            background-color: #fff;
+            font-size: .6em;
+            color: #000;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .banner-message img
+        {
+            height: 10px;
+            width: 10px;
+        }
+
+    #textarea
+    {
+        width: 100%;
+    }
+}

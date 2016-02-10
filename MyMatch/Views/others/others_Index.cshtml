@@ -1,0 +1,85 @@
+﻿@model MyMatch.Models.others.others
+
+<div id="edit_others">
+    <div class="banner">
+        Good to know about @Model.username
+        @if (Model.username == User.Identity.Name)
+        { 
+            <span style="float: right">
+                @Ajax.ActionLink("Edit section", "edit_others", new AjaxOptions
+       {
+           UpdateTargetId = "edit_others",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+            </span>
+        }
+    </div>
+    <table class="table-others">
+        <tr>
+            <th>Father's Name:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.Father_name
+                </div>
+            </td>
+            <th>Smoking Habbit:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.smoking_habbit
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Mother's Name:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.Mother_name
+                </div>
+            </td>
+            <th>Drinking Habbit:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.drinking_habbit
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Eating Habbit:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.eating_habbit
+                </div>
+            </td>
+            <th>Body Type:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.body_type
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Complexion:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.complexion
+                </div>
+            </td>
+            <th>Physical Status:
+            </th>
+            <td>
+                <div class="td-div">
+                    @Model.physical_status
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</div>

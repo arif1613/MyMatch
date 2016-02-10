@@ -1,0 +1,179 @@
+﻿@model MyMatch.Models.profile_logininfo
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+
+
+<p class="hideinmobile" style="color:red; font: 12px bold sans-serif; text-align:center">Please update all your informations so that people can find and meet you easily. </p>
+@section login{
+
+    <a style="color: white">Hello, @User.Identity.Name</a><a style="color: red">(@ViewBag.status user)</a>
+    <br />
+    <div id="changepassword">
+        @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+        @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+    </div>
+
+}
+
+@section menu1{
+    <div class="banner-colored" id="hide-in-mobile">
+        <a href="@Url.Action("deleteprofile", "myprofile", new { id = Model.ID })">[Delete Profile]</a>
+        <a href="@Url.Action("photo_galary", "myprofile", new { user = Model.username })">[My Pictures]</a>
+    </div>
+    <ul class="onlymobile">
+        <li>
+            <a href="@Url.Action("deleteprofile", "myprofile", new { id = Model.ID })">[Delete]</a>
+        </li>
+        <li>
+            <a href="@Url.Action("photo_galary", "myprofile", new { user = Model.username })">[Pictures]</a>
+        </li>
+    </ul>
+
+
+}
+
+@section menu2{
+    <div>
+        <div class="banner-colored" id="hide-in-mobile">
+            @Html.ActionLink("Interested:", "ïnterested_people", new { page_number = 1 })@ViewBag.interest_count
+            @Html.ActionLink("Saved profiles:", "saved_profiles", new { page_number = 1 })@ViewBag.saved_profiles
+            @if (User.IsInRole("aa1613"))
+            {
+                <a href="@Url.Action("webmail_Index", "webmail")">Webmail</a>
+            }
+        </div>
+        <ul class="onlymobile">
+            <li>
+                @Html.ActionLink("Interested:", "ïnterested_people", new { page_number = 1 })@ViewBag.interest_count
+            </li>
+            <li>
+                @Html.ActionLink("Saved profiles:", "saved_profiles", new { page_number = 1 })@ViewBag.saved_profiles
+            </li>
+
+            @if (User.IsInRole("aa1613"))
+            {
+                <li style="display: inline-block; list-style: none; font-size: 1.3em; background-color: #fff">
+                    <a href="@Url.Action("webmail_Index", "webmail")">Webmail</a>
+                </li>
+            }
+        </ul>
+
+    </div>
+
+}
+
+@section picture{
+    @Html.Action("my_picture", "myprofile", new { user_name = @User.Identity.Name })
+}
+@section basicinfo{
+    <div class="hideinmobile">
+        @Html.Action("basicinfo_Index", "basicinfo", new { user_name = @User.Identity.Name })
+    </div>
+
+    <div class="onlymobile" style="width: 100%; float: left; clear: both; background-color: #c2e3f2; font-size: 1.2em; font-weight:bolder; padding-top: .5em; padding-bottom: .5em; text-align:left; margin-bottom: .2em">
+        @Ajax.ActionLink("Basic Informations >>", "basicinfo_Index", "basicinfo", new { user_name = @User.Identity.Name }, new AjaxOptions
+   {
+       UpdateTargetId = "mobile_view",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+        
+    </div>
+
+    <div class="onlymobile" style="width: 100%; float: left; clear: both; background-color: #c2e3f2; font-size: 1.2em; font-weight:bolder; padding-top: .5em; padding-bottom: .5em; text-align:left; margin-bottom: .2em">
+                @Ajax.ActionLink("Contact Informations >>", "contactinfo_Index", "contactinfo", new { user_name = @User.Identity.Name }, new AjaxOptions
+   {
+       UpdateTargetId = "mobile_view",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+        
+    </div>
+
+        <div class="onlymobile" style="width: 100%; float: left; clear: both; background-color: #c2e3f2; font-size: 1.2em; font-weight:bolder; padding-top: .5em; padding-bottom: .5em; text-align:left; margin-bottom: .2em">
+                @Ajax.ActionLink("Career Informations >>", "careerinfo_Index", "careerinfo", new { user_name = @User.Identity.Name }, new AjaxOptions
+   {
+       UpdateTargetId = "mobile_view",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+        
+    </div>
+
+            <div class="onlymobile" style="width: 100%; float: left; clear: both; background-color: #c2e3f2; font-size: 1.2em; font-weight:bolder; padding-top: .5em; padding-bottom: .5em; text-align:left; margin-bottom: .2em">
+                @Ajax.ActionLink("About Me >>","aboutme_Index", "lookingfor", new { user_name = @User.Identity.Name }, new AjaxOptions
+   {
+       UpdateTargetId = "mobile_view",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+        
+    </div>
+
+    
+            <div class="onlymobile" style="width: 100%; float: left; clear: both; background-color: #c2e3f2; font-size: 1.2em; font-weight:bolder; padding-top: .5em; padding-bottom: .5em; text-align:left; margin-bottom: .2em">
+                @Ajax.ActionLink("Looking For >>","lookingfor_Index", "lookingfor", new { user_name = @User.Identity.Name }, new AjaxOptions
+   {
+       UpdateTargetId = "mobile_view",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET"
+
+   })
+        
+    </div>
+    
+    
+    
+    <div id="ajaxloaderm" style="display: none; text-align: center">
+        <img src="~/Content/ajax-loader.gif" />
+    </div>
+    <div id="mobile_view" style="clear: both; float: left; width: 100%">
+    </div>
+
+}
+@section careerinfo{
+    @Html.Action("careerinfo_Index", "careerinfo", new { user_name = @User.Identity.Name })
+}
+@section contactinfo{
+    @Html.Action("contactinfo_Index", "contactinfo", new { user_name = @User.Identity.Name })
+}
+@section aboutme{
+    @Html.Action("aboutme_Index", "lookingfor", new { user_name = @User.Identity.Name })
+}
+@section lookingfor{
+    @Html.Action("lookingfor_Index", "lookingfor", new { user_name = @User.Identity.Name })
+}
+
+@section search{
+        <div class="banner">
+            <a>Search Profiles</a>
+        </div>
+        @Html.Action("search_Index", "search")
+    
+}
+@section profileview{
+    @Html.Action("profile_viewer_partial", "Profile_Viewers")
+}
+@section message{
+    <div class="hideinmobile">
+        @Html.Action("message_partial", "message")
+    </div>
+}
+@section others{
+    @Html.Action("others_Index", "others", new { username = @User.Identity.Name })
+}
+

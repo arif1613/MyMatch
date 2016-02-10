@@ -1,0 +1,35 @@
+﻿@model MyMatch.Models.profile_logininfo
+
+<div id="edit_picture">
+    <div class="banner">
+        @if (Request.IsAuthenticated)
+        {
+            if (User.Identity.Name == Model.username)
+            {
+            <p style="text-align: center">@User.Identity.Name
+
+                <span style="float: right">
+                    @Ajax.ActionLink("Edit pictures", "edit_picture", new AjaxOptions
+                   {
+                       UpdateTargetId = "edit_picture",
+                       InsertionMode = InsertionMode.Replace,
+                       HttpMethod = "GET"
+                   })
+                </span>
+            </p>
+            }
+            else
+            {
+            <h3 style="text-align:left">@Model.username</h3>
+            }
+
+        }
+    </div>
+    <br />
+    <div class="image" id="image">
+        <img src="~/Images/Pictures/@(Model.username)..1.png" height="180" width="240" alt="indian matchmaking" />
+    </div>
+
+
+</div>
+

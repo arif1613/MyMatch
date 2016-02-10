@@ -1,0 +1,94 @@
+﻿@model IEnumerable<MyMatch.Models.message>
+
+@{
+    ViewBag.Title = "message_sent";
+}
+
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+
+<div style="width: 100%; text-align: center; font-size: 1em">
+        <ul class="onlymobile">
+            <li>
+                @Html.ActionLink("[ Inbox ]", "message_inbox", "message")
+            </li>
+            <li>
+                 @Html.ActionLink("[ Outbox ]", "message_sent", "message")
+            </li>
+            <li>
+                @Html.ActionLink("[ Chat History ]", "chat_history", "message")
+            </li>
+        </ul>
+<div id="message_menu" class="hideinmobile" style="width: 16%; padding: 2%; float: left; clear: both; text-align: left; background-color: #eee; margin-top: 4%">
+        <ul>
+            <li style="list-style: none">
+                @Html.ActionLink("Inbox", "message_inbox", "message")
+            </li>
+            <li style="list-style: none">
+                @Html.ActionLink("Outbox", "message_sent", "message")
+            </li>
+            <li style="list-style: none">
+                @Html.ActionLink("Chat History", "chat_history", "message")
+            </li>
+            <li style="list-style: none">
+                <a>----------</a>
+            </li>
+            <li style="list-style: none; color: red">If you delete a message, than the message will be deleted from receiver's inbox/outbox too.
+            </li>
+        </ul>
+    </div>
+    <div id="message_box" style="width: 80%; float: left">
+        <h3 class="banner">My Sent Message(@ViewBag.total_message)</h3>
+        @foreach (var m in Model)
+        { 
+            @Html.Action("message_sent_show", "message", new { id = m.ID })
+            <span style="float: right">@Html.ActionLink("Delete", "del_sent_message", new { id = m.ID, page_number = ViewBag.page_number })</span>
+        }
+
+        <br />
+        @for (int i = ViewBag.page_number; i <= ViewBag.total_page; i++)
+        {
+            using (Html.BeginForm("message_sent", "message"))
+            {
+                if (i == @ViewBag.page_number)
+                {
+            <input type="submit" value="@i" name="page_number" style="display: inline; float:left;color:red" />
+                }
+                else
+                {
+            <input type="submit" value="@i" name="page_number" style="display: inline; float:left" />
+                }
+
+            }
+        }
+    </div>
+
+</div>
+
+@section login{
+    <div style="background-color: #8ac5e8; padding: 1%">
+
+        <a style="color: white">@Html.ActionLink("My Profile", "Index", "myprofile")</a>
+        <br />
+        <div id="changepassword">
+            @Html.ActionLink("[ Log Out ]", "LogOff", "Account")
+            @Ajax.ActionLink("[ Change Password ]", "ChangePassword", "Account", new AjaxOptions
+     {
+         UpdateTargetId = "changepassword",
+         InsertionMode = InsertionMode.Replace,
+         HttpMethod = "GET"
+
+     })
+        </div>
+    </div>
+}
+
+@section search{
+    <div id="hide-in-mobile">
+        @Html.Action("search_Index", "search")
+    </div>
+}
+@section profileview{
+    <div class="hideinmobile">
+        @Html.Action("profile_viewer_partial", "Profile_Viewers")
+    </div>
+}
